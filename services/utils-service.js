@@ -1,7 +1,8 @@
-'use strict'
 
-
-
+// export const UtilsService={
+//     getIntNotInc,
+//     makeId
+// }
 
 
 function getIntNotInc(min = 0, max = 10) {

@@ -1,5 +1,6 @@
 
 import {MailApp} from '../apps/Mail/MailApp.jsx'
+
 export class Mail extends React.Component{
    
    
@@ -11,6 +12,7 @@ export class Mail extends React.Component{
     render (){
     return (
         <section>
+
             <MailApp/>
         </section>
     )}
