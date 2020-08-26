@@ -30,17 +30,26 @@
     box-shadow: 0px 0px 17px -3px rgba(64,64,64,1);
 }
 
-.btn-toggle-pin{
+.note-btns-container{
     text-align: right;
+}
+
+.btn-toggle-pin, .btn-remove-note{
     cursor: pointer;
+    padding: 5px;
+    margin: 1px;
+    border-radius: 5px;;
+}
+.btn-toggle-pin:hover, .btn-remove-note:hover{
+    background-color: #b8b8b8;
 }
 
 .title-edit textarea{
-    color: rgb(129, 129, 129);
     border:none;
     border-bottom: 1px solid #ee6f57;
     font-family: inherit;
     background-color:#d3d3d3;
+    color: rgb(129, 129, 129);
     resize: none;
 }
 
@@ -64,4 +73,9 @@
 .img-container img{
     width:100%;
     border-radius: 5px;
+}
+
+.todo-done{
+    text-decoration: line-through;
+    color: rgb(129, 129, 129);
 }

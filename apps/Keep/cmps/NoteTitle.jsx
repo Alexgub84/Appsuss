@@ -6,19 +6,14 @@ export class NoteTitle extends React.Component {
         isEditMode: false
     }
     componentDidMount() {
-        this.loadTitle();
+        // this.loadTitle();
+        const {title}=this.props;
+        this.setState({title});
     }
     handleChange = (ev) => {
         const newTitle = ev.target.value;
         notesService.updateTitle(this.props.id, newTitle);
-        this.setState(
-            () => { return { title: newTitle } },
-            () => { this.loadTitle(); }
-        );
-    }
-    loadTitle = () => {
-        const title = notesService.getTitleById(this.props.id);
-        this.setState({ title });
+        this.props.loadNotes();
     }
     onEditMode = () => {
         this.setState({ isEditMode: true });

@@ -29,13 +29,12 @@ export class KeepApp extends React.Component {
                         <span className="btn-add-note"> video</span>
                     </div>
                 {pinnedNotes && <div className="pinned-notes">
-                    <h3>PINNED</h3>
-                    
-                    <NoteList notes={pinnedNotes} />
+                    <h3>PINNED</h3>    
+                    <NoteList notes={pinnedNotes} loadNotes={this.loadNotes}  />
                 </div>}
                 {unpinnedNotes && <div className="unpinned-notes">
                     <h3>UNPINNED</h3>
-                    <NoteList notes={unpinnedNotes} />
+                    <NoteList notes={unpinnedNotes} loadNotes={this.loadNotes} />
                 </div>}
             </main>
         );

@@ -5,7 +5,8 @@ export const notesService = {
     getNoteById,
     updateTitle,
     getTitleById,
-    togglePin
+    togglePin,
+    toggleTodo
 };
 
 const mockUpNotes = [
@@ -64,7 +65,7 @@ function getNoteById(noteId) {
 
 function togglePin(noteId) {
     const noteIdx = getNoteIdxById(noteId);
-    gNotes[noteIdx].isPinned=!gNotes[noteIdx].isPinned;
+    gNotes[noteIdx].isPinned = !gNotes[noteIdx].isPinned;
     saveToStorage('NOTES', gNotes);
 }
 
@@ -81,6 +82,12 @@ function getNoteIdxById(noteId) {
 function updateTitle(noteId, newTitle) {
     const noteIdx = getNoteIdxById(noteId);
     gNotes[noteIdx] = { ...gNotes[noteIdx], title: newTitle };
+    saveToStorage('NOTES', gNotes);
+}
+
+function toggleTodo(noteId, todoIdx) {
+    const noteIdx = getNoteIdxById(noteId);
+    gNotes[noteIdx].info.todos[todoIdx].doneAt = (gNotes[noteIdx].info.todos[todoIdx].doneAt) ? null : Date.now();
     saveToStorage('NOTES', gNotes);
 }
 
