@@ -1,0 +1,10 @@
+@import './nav-bar.css';
+@import './notification.css';
+
+
+body {
+    box-sizing: border-box;
+    background-color: lightblue;
+}
+
+/* HELPERS */
