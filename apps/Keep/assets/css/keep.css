@@ -1,0 +1,29 @@
+
+.note-list{
+    column-count: 4;
+    column-gap: 1em;
+}
+
+.note {
+    background-color: #f1f0f0;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    color: #303030;
+    width: 20vw;
+    display: inline-block;
+}
+
+.note:hover{
+    box-shadow: 0px 0px 17px -3px rgba(64,64,64,1);
+}
+
+.img-container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.img-container img{
+    width:100%;
+    border-radius: 5px;
+}

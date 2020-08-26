@@ -7,7 +7,6 @@ export class NoteText extends React.Component {
         this.setState({ note });
     }
     render() {
-        console.log(this.props);
         const { note } = this.state;
         return note && <div className={`note text note=${note.id}`}>
             <h2>{note.title}</h2>

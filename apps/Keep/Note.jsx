@@ -19,10 +19,8 @@ export class Note extends React.Component {
         }
     }
     render() {
-        console.log(this.props);
         const { note } = this.props;
         return (<li>{this.DynamicCmp(note)}</li>);
-        // return <li>hello</li>
     }
 }
 

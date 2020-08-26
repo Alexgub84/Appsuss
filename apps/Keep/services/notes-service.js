@@ -22,7 +22,7 @@ const mockUpNotes = [
         id: 'n102',
         type: "NoteImg",
         title: "When you search 'Alex Guberman' on Google you find...",
-        isPinned: true,
+        isPinned: false,
         info: {
             url: "https://pbs.twimg.com/profile_images/819674377562324992/5U5xhfVi_400x400.jpg",
         },
@@ -34,7 +34,7 @@ const mockUpNotes = [
         id: 'n103',
         type: "NoteTodos",
         title: "Today's Assignments:",
-        isPinned: true,
+        isPinned: false,
         info: {
             todos: [
                 { txt: "Eat", doneAt: null },

@@ -13,14 +13,17 @@ export class KeepApp extends React.Component {
             .then(notes => {
                 this.setState({ notes });
             });
-    }   
+    }
     render() {
         const { notes } = this.state;
+        if (!notes) return <span>Loading...</span>;
+        const pinneNotes = notes.filter(note => note.isPinned === true);
+        const unpinnedNotes = notes.filter(note => note.isPinned === false);
         return (
             <main>
                 <h1>KEEP APP</h1>
-                {!notes && <span>Loading...</span>}
-                {notes && <NoteList notes={notes} />}
+                {notes && <NoteList notes={pinneNotes} />}
+                {notes && <NoteList notes={unpinnedNotes} />}
             </main>
         );
     }
