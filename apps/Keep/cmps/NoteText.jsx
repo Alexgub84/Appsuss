@@ -8,9 +8,6 @@ export class NoteText extends React.Component {
     }
     render() {
         const { note } = this.state;
-        return note && <div className={`note text note=${note.id}`}>
-            <h2>{note.title}</h2>
-            <p>{note.info.txt}</p>
-        </div>
+        return note && <p>{note.info.txt}</p>;
     }
 }

@@ -1,5 +1,5 @@
 import { notesService } from './services/notes-service.js'
-import { NoteList } from './NoteList.jsx'
+import { NoteList } from './cmps/NoteList.jsx'
 
 export class KeepApp extends React.Component {
     state = {
@@ -17,13 +17,26 @@ export class KeepApp extends React.Component {
     render() {
         const { notes } = this.state;
         if (!notes) return <span>Loading...</span>;
-        const pinneNotes = notes.filter(note => note.isPinned === true);
+        const pinnedNotes = notes.filter(note => note.isPinned === true);
         const unpinnedNotes = notes.filter(note => note.isPinned === false);
         return (
             <main>
                 <h1>KEEP APP</h1>
-                {notes && <NoteList notes={pinneNotes} />}
-                {notes && <NoteList notes={unpinnedNotes} />}
+                <div className="addNote">
+                        <span className="btn-add-note">text</span>
+                        <span className="btn-add-note">img</span>
+                        <span className="btn-add-note">todos</span>
+                        <span className="btn-add-note"> video</span>
+                    </div>
+                {pinnedNotes && <div className="pinned-notes">
+                    <h3>PINNED</h3>
+                    
+                    <NoteList notes={pinnedNotes} />
+                </div>}
+                {unpinnedNotes && <div className="unpinned-notes">
+                    <h3>UNPINNED</h3>
+                    <NoteList notes={unpinnedNotes} />
+                </div>}
             </main>
         );
     }

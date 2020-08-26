@@ -2,7 +2,10 @@
 
 export const notesService = {
     getAllNotes,
-    getNoteById
+    getNoteById,
+    updateTitle,
+    getTitleById,
+    togglePin
 };
 
 const mockUpNotes = [
@@ -57,6 +60,28 @@ function getAllNotes() {
 
 function getNoteById(noteId) {
     return gNotes.find(note => note.id === noteId);
+}
+
+function togglePin(noteId) {
+    const noteIdx = getNoteIdxById(noteId);
+    gNotes[noteIdx].isPinned=!gNotes[noteIdx].isPinned;
+    saveToStorage('NOTES', gNotes);
+}
+
+function getTitleById(noteId) {
+    return gNotes.find(note => {
+        if (note.id === noteId) return note.title;
+    });
+}
+
+function getNoteIdxById(noteId) {
+    return gNotes.findIndex(note => note.id === noteId);
+}
+
+function updateTitle(noteId, newTitle) {
+    const noteIdx = getNoteIdxById(noteId);
+    gNotes[noteIdx] = { ...gNotes[noteIdx], title: newTitle };
+    saveToStorage('NOTES', gNotes);
 }
 
 
