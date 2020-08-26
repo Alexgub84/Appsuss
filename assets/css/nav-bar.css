@@ -1,6 +1,6 @@
 .header-container{
     width: 100%;
-    background-color: gray;
+    background-color:#145374;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,6 +9,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
+
     right: 0;
     top: 80px;
 }

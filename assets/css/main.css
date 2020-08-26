@@ -3,13 +3,25 @@
 @import '../../apps/Mail/assets/css/main-mail.css';
 @import '../../apps/Keep/assets/css/keep.css';
 
+@font-face{
+    font-family: Heebo;
+    src: url('../Fonts/Heebo-Regular.ttf')
+}
+
+html{
+    font-family: Heebo;
+    font-size: 14px;
+}
 
 body {
     box-sizing: border-box;
-    background-color: lightblue;
+    background-color: #f6f5f5;
 }
 li{
     list-style: none
+}
+a{
+    text-decoration: none;
 }
 
 /* HELPERS */
