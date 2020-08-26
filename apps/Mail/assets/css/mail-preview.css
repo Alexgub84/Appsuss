@@ -4,10 +4,40 @@
     justify-content: flex-start;
     align-items: center;
     border: 1px solid lightgrey;
-    width: 800px;
+    width: 1000px;
 }
 
 .mail-preview:hover{
     cursor: pointer;
     box-shadow: 0px 0px 0px 2px grey;;
+}
+
+.mail-preview span{
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+.mail-from-name{
+    width: 150px;
+}
+
+.mail-subject{
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mail-atdate {
+    align-self: flex-end;
+    margin-right: 0;
+}
+
+.mail-body{
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bold{
+    font-weight: bold;
 }

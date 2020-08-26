@@ -1,2 +1,14 @@
-@import '../css/mail-preview.css'
+@import '../css/mail-preview.css';
+
+
+
+/* MENU */
+.menu li:hover{
+    background-color: red;
+}
+
+/* MAIL FULL */
+.mail-full{
+    height: 100px;
+}
 

@@ -12,7 +12,7 @@ function _NavBar(props){
             </section>
             <nav className="nav-container">
                 <NavLink exact activeClassName='active-nav' to='/'>Home</NavLink> 
-                <NavLink exact to="/keep">Keep</NavLink> 
+                <NavLink exact to="/keep">Keep</NavLink>    
                 <NavLink exact to="/mail">Mail</NavLink> 
                 <NavLink exact to="/about">About</NavLink> 
             </nav>
