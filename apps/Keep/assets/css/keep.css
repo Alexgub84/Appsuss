@@ -1,15 +1,16 @@
-*:focus{
-    outline:0
+*:focus {
+    outline: 0
 }
 
-.btn-add-note{
+.btn-add-note {
     background-color: #b8b8b8;
     border-radius: 50px;
     margin: 5px;
     padding: 5px;
+    cursor: pointer;
 }
 
-.note-list{
+.note-list {
     column-count: 4;
     column-gap: 1em;
 }
@@ -22,38 +23,43 @@
     color: #303030;
     width: 20vw;
     display: inline-block;
-    box-shadow: 0px 0px 5px -3px rgba(64,64,64,1);
-
+    box-shadow: 0px 0px 5px -3px rgba(64, 64, 64, 1);
 }
 
-.note:hover{
-    box-shadow: 0px 0px 17px -3px rgba(64,64,64,1);
+.note:hover {
+    box-shadow: 0px 0px 17px -3px rgba(64, 64, 64, 1);
 }
 
-.note-btns-container{
+.note-btns-container {
     text-align: right;
 }
 
-.btn-toggle-pin, .btn-remove-note{
+.invisible {
+    visibility: hidden;
+}
+
+.btn-toggle-pin, .btn-remove-note, .btn-toggle-pallet {
     cursor: pointer;
     padding: 5px;
     margin: 1px;
-    border-radius: 5px;;
-}
-.btn-toggle-pin:hover, .btn-remove-note:hover{
-    background-color: #b8b8b8;
+    border-radius: 5px;
+    ;
 }
 
-.title-edit textarea{
-    border:none;
+.btn-toggle-pin:hover, .btn-remove-note:hover, .btn-toggle-pallet:hover {
+    background-color: rgba(238, 199, 199, 0.5);
+}
+
+textarea {
+    border: none;
     border-bottom: 1px solid #ee6f57;
     font-family: inherit;
-    background-color:#d3d3d3;
+    background-color: #d3d3d3;
     color: rgb(129, 129, 129);
     resize: none;
 }
 
-.btn-update-title {
+.btn-update-title, .btn-update-text {
     display: inline-block;
     border-radius: 5px;
     width: 30%;
@@ -61,21 +67,64 @@
     cursor: pointer;
 }
 
-.btn-update-title:hover{
+.btn-update-title:hover, .btn-update-text:hover {
     background-color: #b8b8b8;
 }
 
-.img-container{
+.img-container {
     width: 80%;
     margin: 0 auto;
 }
 
-.img-container img{
-    width:100%;
+.img-container img {
+    width: 100%;
     border-radius: 5px;
 }
 
-.todo-done{
+.todo-done {
     text-decoration: line-through;
     color: rgb(129, 129, 129);
+}
+
+.pallet {
+    background-color: rgba(238, 199, 199, 0.2);
+    border-radius: 5px;
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    transition: all 0.3s;
+    margin: 0 auto;
+}
+
+.color {
+    border-radius: 50px;
+    display: inline-block;
+    width: 20px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.dark-blue {
+    background-color: darkblue;
+}
+
+.grey {
+    background-color: grey;
 }

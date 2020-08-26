@@ -6,7 +6,6 @@ export class NoteTitle extends React.Component {
         isEditMode: false
     }
     componentDidMount() {
-        // this.loadTitle();
         const {title}=this.props;
         this.setState({title});
     }
