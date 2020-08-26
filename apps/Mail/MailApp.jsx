@@ -25,14 +25,14 @@ export class MailApp extends React.Component {
     render() {
         const {mails} = this.state;
         return (
-            <div className="mail-container">
+            <div className="mail-container flex">
               <Menu/>
-            {mails && <ul className="mails-list">
-                {mails.map((mail,idx)=>{
-                    return  <MailPreview key={idx} mail={mail}/>
-                })}
-            </ul>        
-            }
+                {mails && <ul className="mails-list">
+                    {mails.map((mail,idx)=>{
+                        return  <MailPreview key={idx} mail={mail}/>
+                    })}
+                </ul>        
+                }
     
             </div>
     
