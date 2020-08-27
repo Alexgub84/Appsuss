@@ -30,13 +30,17 @@ export class MailApp extends React.Component {
     }  
     sendNewMail=(mail)=>{
         this.toggleNewMail()
-        console.log('New Mail');
+        MailService.addNewMail(mail);
+        this.loadMails()
     }
     setFilterTrash=()=>{
         this.setState({filterBy:'trash'});
     }
     setFilterInbox=()=>{
         this.setState({filterBy:'inbox'});
+    }
+    setFilterSent=()=>{
+        this.setState({filterBy:'sent'});
     }
     toggleNewMail=()=>{
         this.setState({isNewMail:!this.state.isNewMail})
@@ -50,7 +54,7 @@ export class MailApp extends React.Component {
         const {filterBy} = this.state
         if (!this.state.mails) return
         return this.state.mails.filter((mail)=>{
-            return (filterBy==='trash' && mail.isTrash) || (filterBy==='inbox' && !mail.isTrash)
+            return (filterBy==='trash' && mail.isTrash) || (filterBy==='inbox' && !mail.isTrash) ||(filterBy ==='sent' && mail.isSent)
         })
     }
     handleMailPreviewClicked =(id)=>{
@@ -78,10 +82,10 @@ export class MailApp extends React.Component {
         const mails = this.getMailsToDisplay();
         return (
             <section>
-            {<NewMail onSend={this.sendNewMail}/> && this.state.isNewMail}
             <div className="mail-container flex">
-              <Menu filterByTrash={this.setFilterTrash} filterByInbox={this.setFilterInbox} composeNew={this.toggleNewMail}/>
-                {mails && <ul className="mails-list">
+              <Menu filterByTrash={this.setFilterTrash} filterByInbox={this.setFilterInbox} filterBySent={this.setFilterSent} composeNew={this.toggleNewMail}/>
+              {this.state.isNewMail && <NewMail onSend={this.sendNewMail}/>||
+                mails && <ul className="mails-list">
                     {mails.map((mail,idx)=>{
                         return(
                         <div>

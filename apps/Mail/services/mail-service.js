@@ -37,7 +37,8 @@ let gFilterBy='';
 export const MailService ={
     query,
     toggleReadById,
-    toggleTrashById
+    toggleTrashById,
+    addNewMail
 }
 
 function query(){
@@ -60,6 +61,11 @@ function toggleReadById(id){
 function toggleTrashById(id){
     let mail=  getMailById(id);
     mail.isTrash= true;
+    saveToStorage(KEY,mails)
+}
+
+function addNewMail(mail){
+    mails.push(mail);
     saveToStorage(KEY,mails)
 }
 
