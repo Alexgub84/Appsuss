@@ -1,30 +1,68 @@
 *:focus {
-    outline: 0
+    outline: 0;
+}
+
+p {
+    word-wrap: break-word;
 }
 
 .add-note {
     background-color: #fff;
+    width: 70vw;
+    height: 5vh;
+    border: 1px solid #d3d3d3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0px 4px 8px -1px #000000;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 0 auto;
 }
 
-.btn-select-note-type {
+.add-note input {
+    border: none;
+    height: 80%;
+    width: 60%;
+    font-size: 1.2rem;
+    margin: auto 0;
+    padding: 3px;
+}
+
+.add-note input:focus {
+    border-bottom: 3px solid #ee6f57;
+}
+
+.add-note-btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn-select-note-type, .btn-add-note {
     display: inline-block;
     padding: 2px;
     margin: 2px;
     text-align: center;
     cursor: pointer;
     border-radius: 5px;
-}
-
-.btn-select-note-type:hover{
-    background-color: rgba(0, 0, 0, 0.15);
+    height: 80%;
 }
 
 .btn-add-note {
-    background-color: #b8b8b8;
-    border-radius: 50px;
-    margin: 5px;
-    padding: 5px;
-    cursor: pointer;
+    font-size: 2rem;
+}
+
+.btn-add-note:hover {
+    color: #ee6f57;
+}
+
+.btn-select-note-type {
+    width: 30px;
+}
+
+.btn-select-note-type:hover {
+    background-color: rgba(238, 111, 87, 0.5)
 }
 
 .note-list {

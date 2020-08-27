@@ -80,7 +80,6 @@ function getNoteById(noteId) {
 }
 
 function addNote(newNote) {
-    console.log(newNote);
     gNotes = [...gNotes, newNote];
     saveToStorage('NOTES', gNotes);
 }

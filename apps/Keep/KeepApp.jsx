@@ -26,11 +26,11 @@ export class KeepApp extends React.Component {
                 <h1>KEEP APP</h1>
                 <AddNote loadNotes={this.loadNotes} />
                 {pinnedNotes && <div className='pinned-notes'>
-                    <h3>PINNED</h3>
+                    <h3><i class="fas fa-lock"></i> PINNED</h3>
                     <NoteList notes={pinnedNotes} loadNotes={this.loadNotes} />
                 </div>}
                 {unpinnedNotes && <div className='unpinned-notes'>
-                    <h3>UNPINNED</h3>
+                    <h3><i class="fas fa-lock-open"></i> UNPINNED</h3>
                     <NoteList notes={unpinnedNotes} loadNotes={this.loadNotes} />
                 </div>}
             </main>
