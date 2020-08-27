@@ -75,7 +75,7 @@ export class AddNote extends React.Component {
                     </div>
                 })}
                 <div className="btn-add-note" onClick={(ev) => { this.onAddNote(ev.target, currNoteType) }}>
-                    <i class="fas fa-plus-square"></i>
+                    <i className="fas fa-plus-square"></i>
                 </div>
                 </div>
             </section>

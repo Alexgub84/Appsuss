@@ -6,6 +6,21 @@ p {
     word-wrap: break-word;
 }
 
+iframe {
+    border: none;
+}
+
+textarea {
+    border: none;
+    border-bottom: 3px solid #ee6f57;
+    font-family: inherit;
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #404040;
+    resize: none;
+    margin: 10px;
+    border-radius: 3px;
+}
+
 .add-note {
     background-color: #fff;
     width: 70vw;
@@ -105,13 +120,20 @@ p {
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-textarea {
-    border: none;
-    border-bottom: 1px solid #ee6f57;
-    font-family: inherit;
-    background-color: #d3d3d3;
-    color: rgb(129, 129, 129);
-    resize: none;
+.title-edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+.title-edit textarea{
+    width: 70%;
+    font-size: 1.2rem;
+}
+
+.btn-update-title {
+    height: 70%;
 }
 
 .btn-update-title, .btn-update-text {

@@ -52,18 +52,18 @@ export class Note extends React.Component {
     render() {
         const { note } = this.props;
         const { isMouseOver, isPalletShown } = this.state;
-        const pinText = (note.isPinned) ? <i class="fas fa-lock-open"></i> : <i class="fas fa-lock"></i>;
+        const pinText = (note.isPinned) ? <i className="fas fa-lock-open"></i> : <i className="fas fa-lock"></i>;
         const btnContainerClassStr = (isMouseOver) ? "note-btns-container" : "note-btns-container invisible";
         return (<li><div className={`note note-${note.id}`} onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} style={note.style}>
             <div className={btnContainerClassStr}>
                 <span className="btn-toggle-pallet" onClick={this.onTogglePallet}>
-                    <i class="fas fa-palette"></i>
+                    <i className="fas fa-palette"></i>
                 </span>
                 <span className="btn-toggle-pin" onClick={() => { this.onTogglePin(note.id) }}>
                     {pinText}
                 </span>
                 <span className="btn-remove-note" onClick={() => { this.onRemoveNote(note.id) }}>
-                    <i class="fas fa-times"></i>
+                    <i className="fas fa-times"></i>
                 </span>
             </div>
             <NoteTitle id={note.id} title={note.title} onEditTitle={this.onEditTitle} loadNotes={this.props.loadNotes} />
