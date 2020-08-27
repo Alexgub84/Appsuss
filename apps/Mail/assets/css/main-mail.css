@@ -6,7 +6,9 @@
 .menu li:hover{
     background-color: red;
 }
-
+.btn:hover{
+    cursor: pointer;
+}
 /* MAIL FULL */
 .full-container{
   
@@ -18,10 +20,19 @@
     justify-content: space-between;
 }
 
+.full-from-email{
+    color: grey;
+}
+
 .full-subject{
     font-size: 1.4rem;
 }
 
-.btn :hover{
+.full-body{
+    padding: 0 10px;
+    max-width: 1040px;
+}
+.btn:hover {
     cursor: pointer;
+    
 }

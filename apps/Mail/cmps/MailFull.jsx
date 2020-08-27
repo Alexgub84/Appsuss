@@ -20,15 +20,13 @@ export class MailFull extends React.Component{
                 <section className="full-title">
                     <div className="full-subject">{subject}</div>
                     <div>
-                        {/* <div className="full-delete btn">X</div>
-                        <div className="full-close btn">Close</div> */}
-                        <button className="full-delete btn">X</button>
-                        <button className="full-close btn" onClick={this.props.closeFullPreview}>Close</button>
+                        <div className="full-delete btn" onClick={()=>this.props.moveToTrash(id)}>X</div>
+                        <div className="full-close btn" onClick={this.props.closeFullPreview}>Close</div>
                     </div>
                 </section>
                 <section className="full-from">
                     <span className="full-from-name">{fromName}</span>
-                   <span className="full-from-email">{`<${fromEmail}>`}</span>
+                   <span className="full-from-email">{` <${fromEmail}>`}</span>
                 </section>
                 <p className="full-body"> {body} </p>
             </li>

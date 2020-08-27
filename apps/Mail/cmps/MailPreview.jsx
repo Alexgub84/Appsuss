@@ -23,13 +23,16 @@ state={
         
         const {id,fromName,subject,isRead,sentAt,body} = this.props.mail;
         return (
-            <li key={id} className="mail-preview" onClick={()=>this.props.mailPreivewClicked(id)}>            
-                <input type="checkbox"></input>
+            <li key={id} className="mail-preview" >            
+                <input type="checkbox" onChange={(ev)=>this.props.toggleCheckbox(ev)}></input>
                 {/* <div className="first-letter">{fromName.charAt(0)}</div> */}
-                <span  className={isRead?'mail-from-name':'mail-from-name bold'}>{fromName}</span>
-                <span  className={isRead?'mail-subject':'mail-subject bold'}>{subject}</span>
-                <span  className="mail-body">{body}</span>
-                <span  className={isRead?'mail-atdate':'mail-atdate bold'}>{this.getDate(sentAt)}</span>
+                <div className="mail-txt" onClick={()=>this.props.mailPreivewClicked(id)}>
+                    <span  className={isRead?'mail-from-name':'mail-from-name bold'}>{fromName}</span>
+                    <span  className={isRead?'mail-subject':'mail-subject bold'}>{subject}</span>
+                    <span  className="mail-body">{body}</span>
+                    <span  className={isRead?'mail-atdate':'mail-atdate bold'}>{this.getDate(sentAt)}</span>
+                </div>
+       
             </li>
         )
     }

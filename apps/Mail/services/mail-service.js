@@ -1,4 +1,5 @@
-import {storageService} from '../../../services/storage-service.js'
+import {StorageService} from '../../../services/storage-service.js'
+const KEY = 'emails'
 
 var mails=[
     {
@@ -8,6 +9,8 @@ var mails=[
         fromName: 'Mirit',
         fromEmail: 'miriterez@gmail.com',
         isRead: true,
+        isSent:false,
+        isTrash:false,
         sentAt: 1589797298805
     },
     {
@@ -33,10 +36,13 @@ let gFilterBy='';
 
 export const MailService ={
     query,
-    toggleReadById
+    toggleReadById,
+    toggleTrashById
 }
 
 function query(){
+    const mailFromSt = loadFromStorage(KEY);
+    if (mailFromSt) mails=mailFromSt
     return Promise.resolve(mails)
 }
 
@@ -48,4 +54,12 @@ function getMailById(id){
 function toggleReadById(id){
    let mail=  getMailById(id);
    mail.isRead= true;
+   saveToStorage(KEY,mails)
 }
+
+function toggleTrashById(id){
+    let mail=  getMailById(id);
+    mail.isTrash= true;
+    saveToStorage(KEY,mails)
+}
+

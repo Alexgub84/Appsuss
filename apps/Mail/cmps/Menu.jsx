@@ -1,12 +1,13 @@
 
-export function Menu(){
+export function Menu(props){
     return (
         <ul className="menu">
-            <li className="menu-btn">Inbox</li>
-            <li className="menu-btn">Stared</li>
-            <li className="menu-btn">Sent Mail</li>
-            <li className="menu-btn">Trash</li>
-            <li className="menu-btn">Drafts</li>
+            <li className="compose-btn btn" onClick={()=>props.composeNew()}>Compose+</li>
+            <li className="menu-btn btn" onClick={()=>props.filterByInbox()}>Inbox</li>
+            <li className="menu-btn btn">Stared</li>
+            <li className="menu-btn btn">Sent Mail</li>
+            <li className="menu-btn btn" onClick={()=>props.filterByTrash()}>Trash</li>
+            <li className="menu-btn btn">Drafts</li>
         </ul>
     )
 }
