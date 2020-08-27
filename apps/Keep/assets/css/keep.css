@@ -10,6 +10,10 @@ iframe {
     border: none;
 }
 
+main {
+    width: 100%;
+}
+
 textarea {
     border: none;
     border-bottom: 3px solid #ee6f57;
@@ -136,7 +140,7 @@ textarea {
     font-size: 1.2rem;
 }
 
-.btn-update-title, .btn-update-text {
+.btn-update-title, .btn-update-text, .btn-add-todo {
     display: inline-block;
     border-radius: 5px;
     height: 60%;
@@ -148,7 +152,7 @@ textarea {
     justify-content: center;
 }
 
-.btn-update-title:hover, .btn-update-text:hover {
+.btn-update-title:hover, .btn-update-text:hover, .btn-add-todo:hover {
     background-color: rgba(0, 0, 0, 0.15);
 }
 
@@ -185,10 +189,29 @@ textarea {
     cursor: pointer;
 }
 
+.todo-add-container {
+    display: flex;
+    height: 100%;
+}
+
+.todo-add-container input {
+    margin-inline-end: 10px;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.15);
+    border: none;
+    border-bottom: 3px solid #ee6f57;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 .add-todo {
     padding-inline-start: 4px;
     color: rgb(129, 129, 129);
     cursor: pointer;
+}
+
+.btn-add-todo {
+    height: 5vh;
 }
 
 .add-todo:hover {

@@ -13,6 +13,10 @@ export class AddTodo extends React.Component {
         this.setState({newTodoTxt});
     }
     onAddTodo = () => {
+        if(this.state.newTodoTxt==='' || this.state.newTodoTxt===null) {
+            this.setState({isAdding:false})
+            return;
+        }
         const newTodo = { txt: this.state.newTodoTxt, doneAt: null };
         notesService.addNewTodo(this.props.id, newTodo);
         this.setState({ isAdding: false });
@@ -27,8 +31,8 @@ export class AddTodo extends React.Component {
             </li>
         );
         return (
-            <div>
-                <input type="text" className="todoText" placeholder="To do:..." onChange={(ev) => { this.setNewTodoTxt(ev) }} />
+            <div className="todo-add-container">
+                <input type="text" placeholder="To do:..." onChange={(ev) => { this.setNewTodoTxt(ev) }} />
                 <div className="btn-add-todo" onClick={() => this.onAddTodo(newTodoTxt)}>
                     <i className="fas fa-check"></i>
                 </div>
