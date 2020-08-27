@@ -9,23 +9,26 @@ import {MailFull} from './cmps/MailFull.jsx'
 export class MailApp extends React.Component {
     state ={
         mails: null,
-        filterBy:null
+        filterBy:null,
+        isFullShown:false,
+        FullShownId:null
         
     }
 
     componentDidMount(){
         this.loadMails();
-        console.log('mounted');
+     
     }
     loadMails=()=>{
         MailService.query()
             .then(mails=>{
                 this.setState({mails})
+                console.log('Loading new mails');
             })         
     }  
 
-    toggleReadUnRead=(id)=>{
-        console.log('Mail clicked:',id);
+    toggleReadUnRead(id){
+        MailService.toggleReadById(id)
     }
 
     getMailsToDisplay(){
@@ -34,7 +37,18 @@ export class MailApp extends React.Component {
             return true
         })
     }
+    handleMailPreviewClicked =(id)=>{
+        this.toggleReadUnRead(id);
 
+        if(this.state.isFullShown && this.state.FullShownId===id ){
+            this.setState({isFullShown:false})
+        }else if (!this.state.isFullShown){
+            this.setState({FullShownId:id,isFullShown:true})
+        }else  this.setState({FullShownId:id})
+    }
+    closeFullPreview=()=>{
+        this.setState({isFullShown:false})
+    }
 
     render() {
         const mails = this.getMailsToDisplay();
@@ -45,8 +59,8 @@ export class MailApp extends React.Component {
                     {mails.map((mail,idx)=>{
                         return(
                         <div>
-                            <MailPreview key={idx} mail={mail} mailPreivewClicked={this.toggleReadUnRead} loadMails={this.loadMails}/>
-                            {/* {this.state.isShown && <MailFull/>} */}
+                            <MailPreview key={mail.id} mail={mail} mailPreivewClicked={this.handleMailPreviewClicked} />
+                            {this.state.isFullShown && this.state.FullShownId===mail.id && <MailFull key={mail.id+'2'} mail={mail} closeFullPreview={this.closeFullPreview}/>}
                          </div>
                         ) 
                     })}
