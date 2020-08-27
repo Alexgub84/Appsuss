@@ -26,7 +26,9 @@ export class NoteText extends React.Component {
         if (!isEditMode) return <p onClick={() => { this.onEditMode() }}>{note.info.txt}</p>;
         return <div className="text-edit flex">
             <textarea name="editText" defaultValue={note.info.txt} onChange={(ev) => this.handleChange(ev)}></textarea>
-            <div className="btn-update-text" onClick={() => { this.offEditMode() }}>V</div>
+            <div className="btn-update-text" onClick={() => { this.offEditMode() }}>
+                <i className="fas fa-check"></i>
+            </div>
         </div>
     }
 }

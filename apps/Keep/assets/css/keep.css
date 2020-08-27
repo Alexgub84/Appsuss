@@ -27,7 +27,7 @@ textarea {
     height: 5vh;
     border: 1px solid #d3d3d3;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     font-size: 1.5rem;
     box-shadow: 0px 4px 8px -1px #000000;
@@ -93,11 +93,15 @@ textarea {
     color: #303030;
     width: 25vw;
     display: inline-block;
-    box-shadow: 0px 0px 5px -3px rgba(64, 64, 64, 1);
+    box-shadow: 0px 0px 10px -3px rgba(64, 64, 64, 1);
 }
 
 .note:hover {
     box-shadow: 0px 0px 20px -3px rgba(64, 64, 64, 1);
+}
+
+.note ul {
+    padding: 0;
 }
 
 .note-btns-container {
@@ -120,28 +124,28 @@ textarea {
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-.title-edit {
+.title-edit, .text-edit {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 10vh;
 }
 
-.title-edit textarea{
+.title-edit textarea, .text-edit textarea {
     width: 70%;
     font-size: 1.2rem;
-}
-
-.btn-update-title {
-    height: 70%;
 }
 
 .btn-update-title, .btn-update-text {
     display: inline-block;
     border-radius: 5px;
-    width: 30%;
+    height: 60%;
+    width: 20%;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .btn-update-title:hover, .btn-update-text:hover {
@@ -158,9 +162,41 @@ textarea {
     border-radius: 5px;
 }
 
+.todo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+}
+
 .todo-done {
     text-decoration: line-through;
     color: rgb(129, 129, 129);
+}
+
+.btn-remove-todo {
+    display: inline-block;
+    justify-self: flex-end;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.add-todo {
+    padding-inline-start: 4px;
+    color: rgb(129, 129, 129);
+    cursor: pointer;
+}
+
+.add-todo:hover {
+    color: #ee6f57;
+}
+
+.add-todo span {
+    padding-inline-start: 4px;
 }
 
 .pallet {

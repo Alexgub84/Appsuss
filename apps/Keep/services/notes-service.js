@@ -10,64 +10,100 @@ export const notesService = {
     addNote,
     updateStyle,
     updateText,
-    toggleTodo
+    toggleTodo,
+    addNewTodo,
+    removeTodo
 };
 
 const mockUpNotes = [
     {
-        id: 'n101',
-        type: 'NoteText',
-        title: 'The meaning of life',
+        id: `n101`,
+        type: `NoteText`,
+        title: `The meaning of life`,
+        isPinned: false,
+        info: { txt: `the mice said it's 42` },
+        style: { backgroundColor: `#fbbc04` }
+    },
+    {
+        id: `n102`,
+        type: `NoteImg`,
+        title: `When you search 'Alex Guberman' on Google you find...`,
+        isPinned: false,
+        info: { url: `https://pbs.twimg.com/profile_images/819674377562324992/5U5xhfVi_400x400.jpg` },
+        style: { backgroundColor: `#ccff90` }
+    },
+    {
+        id: `n103`,
+        type: `NoteTodos`,
+        title: `Today's Assignments:`,
         isPinned: true,
         info: {
-            txt: 'the mice said it\'s 42'
+            todos: [
+                { txt: `Eat`, doneAt: null },
+                { txt: `Sleep`, doneAt: 187111111 },
+                { txt: `Code`, doneAt: null },
+                { txt: `Repeat`, doneAt: null }
+            ]
         },
-        style: {
-            backgroundColor: '#aaaaaa'
-        }
+        style: { backgroundColor: `#e6c9a8` }
     },
     {
-        id: 'n102',
-        type: 'NoteImg',
-        title: 'When you search \'Alex Guberman\' on Google you find...',
-        isPinned: false,
-        info: {
-            url: 'https://pbs.twimg.com/profile_images/819674377562324992/5U5xhfVi_400x400.jpg',
-        },
-        style: {
-            backgroundColor: '#aaaaaa'
-        }
+        id: `2BiiN`,
+        type: `NoteVideo`,
+        title: `אני לא מרגיש ת'פה שליייי`,
+        isPinned: true,
+        info: { url: `https://www.youtube.com/embed/tnFrdk3GPu0` },
+        style: { backgroundColor: `#f28b82` }
     },
     {
-        id: 'n103',
-        type: 'NoteTodos',
-        title: 'Today\'s Assignments:',
+        id: `z2SWg`,
+        type: `NoteImg`,
+        title: `Meow`,
+        isPinned: true,
+        info: { url: `https://i.kym-cdn.com/photos/images/newsfeed/001/439/881/ed5.png` },
+        style: { backgroundColor: `#fff475` }
+    },
+    {
+        id: `tNuOv`,
+        type: `NoteTodos`,
+        title: `Title...`,
         isPinned: false,
         info: {
             todos: [
-                { txt: 'Eat', doneAt: null },
-                { txt: 'Sleep', doneAt: 187111111 },
-                { txt: 'Code', doneAt: null },
-                { txt: 'Repeat', doneAt: null }
+                { txt: `Home`, doneAt: null },
+                { txt: `Mail`, doneAt: 1598537519700 },
+                { txt: `Keep`, doneAt: 1598537520698 },
+                { txt: `Search`, doneAt: null }
             ]
         },
-        style: {
-            backgroundColor: '#aaaaaa'
-        }
+        style: { backgroundColor: `#e8eaed` }
     },
     {
-        id: 'n104',
-        type: 'NoteVideo',
-        title: 'John Petrucci - Terminal Velocity',
+        id: `BrLJW`,
+        type: `NoteText`,
+        title: `Eek, blast of cold air coming out of that box.`,
+        isPinned: false,
+        info: { txt: `Title of your sex tap` },
+        style: { backgroundColor: `#aaaaaa` }
+    },
+    {
+        id: `koPwv`,
+        type: `NoteVideo`,
+        title: `Petrucci's new album!`,
         isPinned: true,
-        info: {
-            url: 'https://www.youtube.com/embed/VjahLtBeElE'
-        },
-        style: {
-            backgroundColor: '#aaaaaa'
-        }
+        info: { url: `https://www.youtube.com/embed/VjahLtBeElE` },
+        style: { backgroundColor: `#d7aefb` }
+    },
+    {
+        id: `a4uqo`,
+        type: `NoteText`,
+        title: `The meaning of life`,
+        isPinned: false,
+        info: { txt: `The mice said it's 42` },
+        style: { backgroundColor: `#aaaaaa` }
     }
 ];
+
 let gNotes;
 _createNotes();
 
@@ -130,6 +166,18 @@ function toggleTodo(noteId, todoIdx) {
     saveToStorage('NOTES', gNotes);
 }
 
+function addNewTodo(noteId, newTodo) {
+    const noteIdx = getNoteIdxById(noteId);
+    gNotes[noteIdx].info.todos.push(newTodo);
+    saveToStorage('NOTES', gNotes);
+}
+
+function removeTodo(noteId, todoIdx) {
+    const noteIdx = getNoteIdxById(noteId);
+    gNotes[noteIdx].info.todos.splice(todoIdx, 1);
+    saveToStorage('NOTES', gNotes);
+}
+
 
 // ----------------
 
@@ -140,4 +188,7 @@ function _createNotes() {
         saveToStorage('NOTES', gNotes);
     }
 }
+
+
+
 
