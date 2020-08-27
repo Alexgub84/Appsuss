@@ -3,10 +3,16 @@
 @import '../../apps/Mail/assets/css/main-mail.css';
 @import '../../apps/Keep/assets/css/keep.css';
 
+/* FONTS */
 @font-face{
     font-family: Heebo;
     src: url('../Fonts/Heebo-Regular.ttf')
 }
+@font-face{
+    font-family: Heebo-Extrabold;
+    src: url('../Fonts/Heebo-ExtraBold.ttf')
+}
+
 
 html{
     font-family: Heebo;

@@ -1,6 +1,6 @@
 import {storageService} from '../../../services/storage-service.js'
 
-const mails=[
+var mails=[
     {
         id: makeId(),
         subject: 'I miss you',
@@ -32,9 +32,20 @@ const mails=[
 let gFilterBy='';
 
 export const MailService ={
-    query
+    query,
+    toggleReadById
 }
 
 function query(){
     return Promise.resolve(mails)
+}
+
+function getMailById(id){
+    const idx = mails.findIndex((mail)=>mail.id === id);
+    return mails[idx];
+}
+
+function toggleReadById(id){
+   let mail=  getMailById(id);
+   mail.isRead= true;
 }

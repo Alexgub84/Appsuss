@@ -8,7 +8,20 @@
 }
 
 /* MAIL FULL */
-.mail-full{
-    height: 100px;
+.full-container{
+  
+    padding: 0 10px;
+}
+.full-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+.full-subject{
+    font-size: 1.4rem;
+}
+
+.btn :hover{
+    cursor: pointer;
+}

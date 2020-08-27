@@ -5,6 +5,7 @@
     align-items: center;
     border: 1px solid lightgrey;
     width: 1000px;
+    color: rgb(75, 74, 74);
 }
 
 .mail-preview:hover{
@@ -39,5 +40,6 @@
 }
 
 .bold{
+    color: black;
     font-weight: bold;
 }
