@@ -2,6 +2,23 @@
     outline: 0
 }
 
+.add-note {
+    background-color: #fff;
+}
+
+.btn-select-note-type {
+    display: inline-block;
+    padding: 2px;
+    margin: 2px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-select-note-type:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
 .btn-add-note {
     background-color: #b8b8b8;
     border-radius: 50px;
@@ -11,7 +28,7 @@
 }
 
 .note-list {
-    column-count: 4;
+    column-count: 3;
     column-gap: 1em;
 }
 
@@ -21,13 +38,13 @@
     padding: 10px;
     margin: 10px;
     color: #303030;
-    width: 20vw;
+    width: 25vw;
     display: inline-block;
     box-shadow: 0px 0px 5px -3px rgba(64, 64, 64, 1);
 }
 
 .note:hover {
-    box-shadow: 0px 0px 17px -3px rgba(64, 64, 64, 1);
+    box-shadow: 0px 0px 20px -3px rgba(64, 64, 64, 1);
 }
 
 .note-btns-container {
@@ -47,7 +64,7 @@
 }
 
 .btn-toggle-pin:hover, .btn-remove-note:hover, .btn-toggle-pallet:hover {
-    background-color: rgba(238, 199, 199, 0.5);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 textarea {
@@ -68,7 +85,7 @@ textarea {
 }
 
 .btn-update-title:hover, .btn-update-text:hover {
-    background-color: #b8b8b8;
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .img-container {
@@ -87,7 +104,7 @@ textarea {
 }
 
 .pallet {
-    background-color: rgba(238, 199, 199, 0.2);
+    background-color: rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     padding: 2px;
     display: flex;
@@ -98,33 +115,8 @@ textarea {
 }
 
 .color {
-    border-radius: 50px;
+    border-radius: 50%;
     display: inline-block;
     width: 20px;
     margin: 2px;
-    cursor: pointer;
-}
-
-.red {
-    background-color: red;
-}
-
-.blue {
-    background-color: blue;
-}
-
-.yellow {
-    background-color: yellow;
-}
-
-.green {
-    background-color: green;
-}
-
-.dark-blue {
-    background-color: darkblue;
-}
-
-.grey {
-    background-color: grey;
 }

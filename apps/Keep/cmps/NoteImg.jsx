@@ -1,4 +1,3 @@
-
 export class NoteImg extends React.Component {
     state = {
         note: null

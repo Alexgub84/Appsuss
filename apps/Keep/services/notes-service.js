@@ -23,7 +23,7 @@ const mockUpNotes = [
             txt: 'the mice said it\'s 42'
         },
         style: {
-            backgroundColor: '#555555'
+            backgroundColor: '#aaaaaa'
         }
     },
     {
@@ -52,7 +52,19 @@ const mockUpNotes = [
             ]
         },
         style: {
-            backgroundColor: '#909090'
+            backgroundColor: '#aaaaaa'
+        }
+    },
+    {
+        id: 'n104',
+        type: 'NoteVideo',
+        title: 'John Petrucci - Terminal Velocity',
+        isPinned: true,
+        info: {
+            url: 'https://www.youtube.com/embed/VjahLtBeElE'
+        },
+        style: {
+            backgroundColor: '#aaaaaa'
         }
     }
 ];

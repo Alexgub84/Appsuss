@@ -1,5 +1,7 @@
 import { notesService } from './services/notes-service.js'
 import { NoteList } from './cmps/NoteList.jsx'
+import { AddNote } from './cmps/AddNote.jsx';
+
 
 export class KeepApp extends React.Component {
     state = {
@@ -14,36 +16,6 @@ export class KeepApp extends React.Component {
                 this.setState({ notes });
             });
     }
-    onAddNote = (noteType) => {
-        let info;
-        switch (noteType) {
-            case 'NoteText':
-                info = { txt: 'Text...' };
-                break;
-            case 'NoteImg':
-                info = { url: 'URL...' };
-                break;
-            case 'NoteTodos':
-                info = { todos: [{ txt: 'To do...', doneAt: null }] };
-                break;
-            case 'NoteVideo':
-                info = {};
-                break;
-
-        }
-        const newNote = {
-            id: makeId(),
-            type: noteType,
-            title: 'Title...',
-            isPinned: false,
-            info,
-            style: {
-                backgroundColor: '#aaaaaa'
-            }
-        }
-        notesService.addNote(newNote);
-        this.loadNotes();
-    }
     render() {
         const { notes } = this.state;
         if (!notes) return <span>Loading...</span>;
@@ -52,12 +24,7 @@ export class KeepApp extends React.Component {
         return (
             <main>
                 <h1>KEEP APP</h1>
-                <div className='addNote'>
-                    <span className='btn-add-note' onClick={() => { this.onAddNote('NoteText') }}>text</span>
-                    <span className='btn-add-note' onClick={() => { this.onAddNote('NoteImg') }}>img</span>
-                    <span className='btn-add-note' onClick={() => { this.onAddNote('NoteTodos') }}>todos</span>
-                    <span className='btn-add-note' onClick={() => { this.onAddNote('NoteVideo') }}> video</span>
-                </div>
+                <AddNote loadNotes={this.loadNotes} />
                 {pinnedNotes && <div className='pinned-notes'>
                     <h3>PINNED</h3>
                     <NoteList notes={pinnedNotes} loadNotes={this.loadNotes} />
