@@ -1,6 +1,6 @@
 const KEY = 'emails'
 
-var mails=[
+var mails = [
     {
         id: makeId(),
         subject: 'I miss you',
@@ -8,8 +8,8 @@ var mails=[
         fromName: 'Mirit',
         fromEmail: 'miriterez@gmail.com',
         isRead: true,
-        isSent:false,
-        isTrash:false,
+        isSent: false,
+        isTrash: false,
         sentAt: 1589797298805
     },
     {
@@ -31,40 +31,41 @@ var mails=[
         sentAt: 1589797248700
     },
 ]
-let gFilterBy='';
+let gFilterBy = '';
 
-export const MailService ={
+export const MailService = {
     query,
     toggleReadById,
     toggleTrashById,
-    addNewMail
+    addNewMail,
+    getMailById
 }
 
-function query(){
+function query() {
     const mailFromSt = loadFromStorage(KEY);
-    if (mailFromSt) mails=mailFromSt
+    if (mailFromSt) mails = mailFromSt
     return Promise.resolve(mails)
 }
 
-function getMailById(id){
-    const idx = mails.findIndex((mail)=>mail.id === id);
+function getMailById(id) {
+    const idx = mails.findIndex((mail) => mail.id === id);
     return mails[idx];
 }
 
-function toggleReadById(id){
-   let mail=  getMailById(id);
-   mail.isRead= true;
-   saveToStorage(KEY,mails)
+function toggleReadById(id) {
+    let mail = getMailById(id);
+    mail.isRead = true;
+    saveToStorage(KEY, mails)
 }
 
-function toggleTrashById(id){
-    let mail=  getMailById(id);
-    mail.isTrash= true;
-    saveToStorage(KEY,mails)
+function toggleTrashById(id) {
+    let mail = getMailById(id);
+    mail.isTrash = true;
+    saveToStorage(KEY, mails)
 }
 
-function addNewMail(mail){
+function addNewMail(mail) {
     mails.push(mail);
-    saveToStorage(KEY,mails)
+    saveToStorage(KEY, mails)
 }
 

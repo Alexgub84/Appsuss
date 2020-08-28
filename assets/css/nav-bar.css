@@ -14,8 +14,19 @@ a:hover {
     align-items: center;
     width: 100%;
 }
-.header-container h1{
-    margin-left:20px
+
+.header-container h1 {
+    margin-left: 20px
+}
+
+.logo {
+    font-family: StalinistOne;
+    font-size: 3rem;
+    color: #ee6f57;
+}
+
+.appsus-logo {
+    font-size: 2rem;
 }
 
 .btn-nav-menu {
@@ -35,21 +46,23 @@ a:hover {
     width: 250px;
     height: 250px;
     padding: 10px;
-}   
-.nav-link{
+}
+
+.nav-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
 }
-.nav-link:hover{
-    box-shadow: inset 0px -5px 1px -3px rgba(238,111,87,1);
 
+.nav-link:hover {
+    box-shadow: inset 0px -5px 1px -3px rgba(238, 111, 87, 1);
 }
+
 .nav-link h3 {
     display: inline-block;
 }
 
-.nav-link i{
+.nav-link i {
     font-size: 2.5rem;
 }

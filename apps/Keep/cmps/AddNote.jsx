@@ -63,20 +63,20 @@ export class AddNote extends React.Component {
         const { noteTypes, currNoteType } = this.state;
         return (
             <section className="add-note">
+                <div className="btn-add-note" onClick={(ev) => { this.onAddNote(ev.target, currNoteType) }}>
+                    <i className="fas fa-plus" style={{ fontSize: '2.5rem' }}></i>
+                </div>
                 <input type="text" value={this.state.inputValue} placeholder={noteTypes[currNoteType].placeholder} onChange={(ev) => { this.setValue(ev.target.value) }} />
                 <div className="add-note-btn-container">
-                {noteTypes.map((type, idx) => {
-                    return <div
-                        className="btn-select-note-type"
-                        key={idx}
-                        onClick={() => { this.setNoteType(idx) }}
-                        style={{ color: (idx === currNoteType) ? '#292929' : '#d3d3d3' }}>
-                        {type.btnTxt}
-                    </div>
-                })}
-                <div className="btn-add-note" onClick={(ev) => { this.onAddNote(ev.target, currNoteType) }}>
-                    <i className="fas fa-plus-square"></i>
-                </div>
+                    {noteTypes.map((type, idx) => {
+                        return <div
+                            className="btn-select-note-type"
+                            key={idx}
+                            onClick={() => { this.setNoteType(idx) }}
+                            style={{ color: (idx === currNoteType) ? '#292929' : '#d3d3d3' }}>
+                            {type.btnTxt}
+                        </div>
+                    })}
                 </div>
             </section>
         )

@@ -1,20 +1,26 @@
 @import './nav-bar.css';
 @import './notification.css';
+@import './search.css';
 @import '../../apps/Mail/assets/css/main-mail.css';
 @import '../../apps/Keep/assets/css/keep.css';
-
 /* FONTS */
-@font-face{
+
+@font-face {
     font-family: Heebo;
     src: url('../Fonts/Heebo-Regular.ttf')
 }
-@font-face{
+
+@font-face {
     font-family: Heebo-Extrabold;
     src: url('../Fonts/Heebo-ExtraBold.ttf')
 }
 
+@font-face {
+    font-family: StalinistOne;
+    src: url('../Fonts/StalinistOne-Regular.ttf')
+}
 
-html{
+html {
     font-family: Heebo;
     font-size: 14px;
 }
@@ -23,22 +29,25 @@ body {
     box-sizing: border-box;
     background-color: #f6f5f5;
 }
-ul{
-    padding:0;
+
+ul {
+    padding: 0;
 }
-li{
+
+li {
     list-style: none
 }
-a{
+
+a {
     text-decoration: none;
 }
 
 /* HELPERS */
 
-.flex{
+.flex {
     display: flex;
 }
 
-.hidden{
+.hidden {
     display: none;
 }

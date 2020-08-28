@@ -37,7 +37,7 @@ textarea {
     box-shadow: 0px 4px 8px -1px #000000;
     padding: 10px;
     border-radius: 12px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .add-note input {
@@ -175,6 +175,10 @@ textarea {
 .todo {
     display: flex;
     align-items: center;
+}
+
+.todo p{
+    margin: 2px;
 }
 
 .todo-done {

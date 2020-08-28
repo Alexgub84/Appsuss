@@ -1,0 +1,27 @@
+.search-container {
+    margin: 20px auto;
+    padding: 0 10px;
+    width: 30vw;
+    background-color: #ffffff;
+    color: #303030;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 4px -1px #000000;
+}
+
+.search-container input{
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+    margin: 5px;
+
+}
+
+.search-container input:focus{
+    border-bottom: 3px solid #ee6f57;
+}
+
+.search-container:hover{
+    color: #ee6f57;
+}

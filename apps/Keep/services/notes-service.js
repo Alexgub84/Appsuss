@@ -1,5 +1,5 @@
 'use strict';
-
+import { MailService } from '../../Mail/services/mail-service.js'
 export const notesService = {
     getAllNotes,
     getNoteById,
@@ -12,7 +12,9 @@ export const notesService = {
     updateText,
     toggleTodo,
     addNewTodo,
-    removeTodo
+    removeTodo,
+    createNoteFromMail,
+    notesQuery
 };
 
 const mockUpNotes = [
@@ -50,7 +52,7 @@ const mockUpNotes = [
     {
         id: `2BiiN`,
         type: `NoteVideo`,
-        title: `אני לא מרגיש ת'פה שליייי`,
+        title: `באים להרים לי`,
         isPinned: true,
         info: { url: `https://www.youtube.com/embed/tnFrdk3GPu0` },
         style: { backgroundColor: `#f28b82` }
@@ -116,7 +118,7 @@ function getNoteById(noteId) {
 }
 
 function addNote(newNote) {
-    gNotes = [...gNotes, newNote];
+    gNotes = [newNote, ...gNotes];
     saveToStorage('NOTES', gNotes);
 }
 
@@ -178,6 +180,32 @@ function removeTodo(noteId, todoIdx) {
     saveToStorage('NOTES', gNotes);
 }
 
+function createNoteFromMail(mailId) {
+    const mail = MailService.getMailById(mailId);
+    const mailTxt = `from: ${mail.fromName} (${mail.fromEmail}) \n\n ${mail.body}`
+    const newNote = {
+        id: makeId(),
+        type: `NoteText`,
+        title: mail.subject,
+        isPinned: false,
+        info: { txt: mailTxt },
+        style: { backgroundColor: `#aaaaaa` }
+    }
+    addNote(newNote);
+}
+
+function notesQuery(searchStr) {
+    if (searchStr === '' || searchStr === null) return null;
+    const filteredNotes = gNotes.filter(note => {
+        return note.title.toLowerCase().includes(searchStr.toLowerCase())
+            || (note.info.txt && note.info.txt.toLowerCase().includes(searchStr.toLowerCase()))
+            || (note.info.url && note.info.url.toLowerCase().includes(searchStr.toLowerCase()))
+            || (note.info.todos && note.info.todos.some(todo => {
+                return todo.txt.toLowerCase().includes(searchStr.toLowerCase());
+            }))
+    });
+    return filteredNotes;
+}
 
 // ----------------
 
