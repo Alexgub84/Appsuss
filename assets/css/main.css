@@ -42,6 +42,10 @@ a {
     text-decoration: none;
 }
 
+input{
+    font-family: inherit;
+}
+
 /* HELPERS */
 
 .flex {
