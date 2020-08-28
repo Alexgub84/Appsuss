@@ -17,15 +17,12 @@ state={
         this.setState({isFullShown: !this.state.isFullShown})
     }
 
-
-
     render(){
         
         const {id,fromName,subject,isRead,sentAt,body} = this.props.mail;
         return (
             <li key={id} className="mail-preview" >            
                 <input type="checkbox" onChange={(ev)=>this.props.toggleCheckbox(ev)}></input>
-                {/* <div className="first-letter">{fromName.charAt(0)}</div> */}
                 <div className="mail-txt" onClick={()=>this.props.mailPreivewClicked(id)}>
                     <span  className={isRead?'mail-from-name':'mail-from-name bold'}>{fromName}</span>
                     <span  className={isRead?'mail-subject':'mail-subject bold'}>{subject}</span>

@@ -1,4 +1,3 @@
-import {StorageService} from '../../../services/storage-service.js'
 const KEY = 'emails'
 
 var mails=[

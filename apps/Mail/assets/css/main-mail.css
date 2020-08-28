@@ -1,18 +1,48 @@
 @import '../css/mail-preview.css';
 
-
+.mail-container{
+    width: 100%;
+}
 
 /* MENU */
-.menu li:hover{
-    background-color: red;
+.menu>*{
+    width: 115px;
+    padding: 5px;
+
+}
+.menu>*:not(:first-child){
+    padding-left:20px ;
+
+}
+.menu>*:not(:first-child):hover{
+background-color: #d6e0f0;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+.menu>*:not(:first-child).active{
+    background-color: #eb8f8f;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    }
+.compose-btn{
+    padding: 5px 20px;
+    box-shadow: 0px 0px 3px 0px black;
+    border-radius: 10px;
 }
 .btn:hover{
     cursor: pointer;
 }
+.compose-btn:hover{
+    background-color: #f1f3f8;
+    box-shadow: 0px 0px 3px 1px black;
+}
 /* MAIL FULL */
 .full-container{
-  
     padding: 0 10px;
+    width: 90%;
+}
+.full-container i{
+    width: 30px;
 }
 .full-title{
     display: flex;
@@ -34,5 +64,10 @@
 }
 .btn:hover {
     cursor: pointer;
-    
+
+}
+
+/* NEW MAIL */
+.new-mail-container{
+    padding: 0 10px;
 }

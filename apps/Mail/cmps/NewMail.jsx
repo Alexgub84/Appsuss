@@ -21,19 +21,18 @@ export class NewMail extends React.Component {
     }
 
     inputChange = (ev) => {
-        const key = ev.target.id;
-        const value = ev.target.value;
-        this.setState({ mail: { ...this.state.mail, [key]: value } })
+        const {name,value}= ev.target;
+        this.setState({ mail: { ...this.state.mail, [name]: value } })
     }
 
 
     render() {
         return (
-            <ul className="new-mail container">
+            <ul className="new-mail-container">
                 <li className="new-mail-title">New Message</li>
                 <li className="new-mail-line">
                     <span>To:</span>
-                    <input type="text" id="to" onChange={this.inputChange} />
+                    <input type="text" name="to" onChange={this.inputChange} />
                 </li>
                 <li className="new-mail-line">
                     <span>Cc:</span>
@@ -45,9 +44,9 @@ export class NewMail extends React.Component {
                 </li>
                 <li className="new-mail-line">
                     <span>Subject:</span>
-                    <input type="text" id="subject" onChange={this.inputChange} />
+                    <input type="text" name="subject" onChange={this.inputChange} />
                 </li>
-                <li><textarea id="body" onChange={this.inputChange}></textarea></li>
+                <li><textarea name="body" onChange={this.inputChange}></textarea></li>
                 <li className="new-mail-btns btn">
                     <div onClick={this.sendMail}>Send</div>
                     <div className="btn">Delete</div>

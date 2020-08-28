@@ -3,13 +3,13 @@ const { Route, Switch } = ReactRouterDOM
 
 import {Menu} from './cmps/Menu.jsx'
 import {MailService} from './services/mail-service.js'
-import {MailPreview} from './cmps/MailPreview.jsx'
-import {MailFull} from './cmps/MailFull.jsx'
+import {MailsList} from './cmps/MailsList.jsx'
 import { NewMail } from './cmps/NewMail.jsx'
 
 export class MailApp extends React.Component {
     state ={
         mails: null,
+        mailsToDisplay:null,
         isNewMail:false,
         filterBy:'inbox',
         isFullShown:false,
@@ -19,8 +19,9 @@ export class MailApp extends React.Component {
 
     componentDidMount(){
         this.loadMails();
-     
+       
     }
+    
     loadMails=()=>{
         MailService.query()
             .then(mails=>{
@@ -41,25 +42,18 @@ export class MailApp extends React.Component {
     }
     setFilterSent=()=>{
         this.setState({filterBy:'sent'});
+
     }
     toggleNewMail=()=>{
         this.setState({isNewMail:!this.state.isNewMail})
     }
 
-    toggleReadUnRead(id){
+    toggleReadUnRead=(id)=>{
         MailService.toggleReadById(id)
     }
 
-    getMailsToDisplay(){
-        const {filterBy} = this.state
-        if (!this.state.mails) return
-        return this.state.mails.filter((mail)=>{
-            return (filterBy==='trash' && mail.isTrash) || (filterBy==='inbox' && !mail.isTrash) ||(filterBy ==='sent' && mail.isSent)
-        })
-    }
     handleMailPreviewClicked =(id)=>{
         this.toggleReadUnRead(id);
-
         if(this.state.isFullShown && this.state.fullShownId===id ){
             this.setState({isFullShown:false})
         }else if (!this.state.isFullShown){
@@ -76,28 +70,28 @@ export class MailApp extends React.Component {
         MailService.toggleTrashById(id);
         this.closeFullPreview();
     }
-    
+    getMailsToDisplay(){
+        const {filterBy} = this.state
+        if (!this.state.mails) return
+        return this.state.mails.filter((mail)=>{
+            return (filterBy==='trash' && mail.isTrash) || (filterBy==='inbox' && !mail.isTrash) ||(filterBy ==='sent' && mail.isSent)
+        })
+        
+    }
 
     render() {
-        const mails = this.getMailsToDisplay();
+       const mails = this.getMailsToDisplay();
+ 
         return (
-            <section>
-            <div className="mail-container flex">
-              <Menu filterByTrash={this.setFilterTrash} filterByInbox={this.setFilterInbox} filterBySent={this.setFilterSent} composeNew={this.toggleNewMail}/>
-              {this.state.isNewMail && <NewMail onSend={this.sendNewMail}/>||
-                mails && <ul className="mails-list">
-                    {mails.map((mail,idx)=>{
-                        return(
-                        <div>
-                            <MailPreview key={mail.id} mail={mail} toggleCheckbox={this.onToggleCheckbox} mailPreivewClicked={this.handleMailPreviewClicked} />
-                            {this.state.isFullShown && this.state.fullShownId===mail.id && <MailFull key={mail.id+'2'} mail={mail} closeFullPreview={this.closeFullPreview} moveToTrash={this.onMoveToTrash}/>}
-                         </div>
-                        ) 
-                    })}
-                </ul>        
-                }
-            </div>
-            </section>
+           
+                <div className="mail-container flex">
+                    <Menu filterByTrash={this.setFilterTrash} filterByInbox={this.setFilterInbox} filterBySent={this.setFilterSent} composeNew={this.toggleNewMail}/>
+                    {console.log(mails)}
+                    {this.state.isNewMail && <NewMail onSend={this.sendNewMail}/>||
+                        mails && <MailsList mails={mails} onToggleReadUnread={this.toggleReadUnRead}/>
+                    }
+                </div>
+            
         )
     }
 }

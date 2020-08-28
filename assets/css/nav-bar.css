@@ -14,6 +14,9 @@ a:hover {
     align-items: center;
     width: 100%;
 }
+.header-container h1{
+    margin-left:20px
+}
 
 .btn-nav-menu {
     font-size: 2em;

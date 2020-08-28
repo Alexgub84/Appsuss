@@ -19,27 +19,27 @@ class _NavBar extends React.Component {
                     <h1>EA</h1>
                     <h1>Appsus</h1>
                     <div className="btn-nav-menu" onClick={this.toggleMenu}>☰</div>
-                    <nav className="nav-container" style={{ opacity: (isMenuHidden) ? 0 : 1 }}>
+                    <nav className="nav-container" style={{ display: (isMenuHidden) ? 'none' : 'block' }}>
                         {!isMenuHidden && <div>
-                            <NavLink exact activeClassName='active-nav' to='/'>
+                            <NavLink exact activeClassName='active-nav' onClick={this.toggleMenu} to='/'>
                                 <div className="nav-link">
                                     <h3>Home</h3>
                                     <i class="fas fa-home"></i>
                                 </div>
                             </NavLink>
-                            <NavLink exact to="/keep">
+                            <NavLink exact onClick={this.toggleMenu} to="/keep">
                                 <div className="nav-link">
                                     <h3>Keep</h3>
                                     <i class="far fa-sticky-note"></i>
                                 </div>
                             </NavLink>
-                            <NavLink exact to="/mail">
+                            <NavLink exact onClick={this.toggleMenu} to="/mail">
                                 <div className="nav-link">
                                     <h3>Mail</h3>
                                     <i class="far fa-envelope"></i>
                                 </div>
                             </NavLink>
-                            <NavLink exact to="/about">
+                            <NavLink exact onClick={this.toggleMenu} to="/about">
                                 <div className="nav-link">
                                     <h3>About</h3>
                                     <i class="fas fa-info"></i>
