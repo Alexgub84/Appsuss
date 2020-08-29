@@ -26,7 +26,7 @@ class _NavBar extends React.Component {
                             <NavLink exact activeClassName='active-nav' onClick={this.toggleMenu} to='/'>
                                 <div className="nav-link">
                                     <div className="img-container">
-                                        <img src="/./../assets/img/home-icon.png" />
+                                        <img src="assets/img/home-icon.png" />
                                     </div>
                                     <h3>Home</h3>
                                 </div>
@@ -34,7 +34,7 @@ class _NavBar extends React.Component {
                             <NavLink exact onClick={this.toggleMenu} to="/about">
                                 <div className="nav-link">
                                     <div className="img-container">
-                                        <img src="/./../assets/img/about-us-icon.jpg" />
+                                        <img src="assets/img/about-us-icon.jpg" />
                                     </div>
                                     <h3>About</h3>
                                 </div>
@@ -42,7 +42,7 @@ class _NavBar extends React.Component {
                             <NavLink exact onClick={this.toggleMenu} to="/mail">
                                 <div className="nav-link">
                                     <div className="img-container">
-                                        <img src="/./../assets/img/mail-icon.png" />
+                                        <img src="assets/img/mail-icon.png" />
                                     </div>
                                     <h3>Mail</h3>
                                 </div>
@@ -50,7 +50,7 @@ class _NavBar extends React.Component {
                             <NavLink exact onClick={this.toggleMenu} to="/keep">
                                 <div className="nav-link">
                                     <div className="img-container">
-                                        <img src="/./../assets/img/note-icon.png" />
+                                        <img src="assets/img/note-icon.png" />
                                     </div>
                                     <h3>Keep</h3>
                                 </div>
