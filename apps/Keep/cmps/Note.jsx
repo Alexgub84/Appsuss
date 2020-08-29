@@ -57,7 +57,9 @@ export class Note extends React.Component {
         return (<li><div className={`note note-${note.id}`} onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} style={note.style}>
             <div className={btnContainerClassStr}>
                 <span className="btn-note-to-mail" onClick={() => { this.onRemoveNote(note.id) }}>
-                    <a href={`#/mail/compose/${note.id}`}><i class="fas fa-envelope-open-text"></i></a>
+                    <a href={`#/mail/compose/${note.id}`}>
+                        <i className="fas fa-envelope-open-text"></i>
+                    </a>
                 </span>
                 <span className="btn-toggle-pallet" onClick={this.onTogglePallet}>
                     <i className="fas fa-palette"></i>
