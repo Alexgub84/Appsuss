@@ -66,9 +66,12 @@
 .full-loadmore-btn{
     color: gray;
 }
+.full-reply{
+    color:black;
+}
 .btn:hover {
     cursor: pointer;
-
+    color: #eb8f8f;
 }
 
 /* NEW MAIL */

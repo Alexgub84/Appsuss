@@ -1,4 +1,5 @@
 const { Link } = ReactRouterDOM
+import {notesService} from '../../Keep/services/notes-service.js' 
 
 export class MailFull extends React.Component{
     state={
@@ -19,6 +20,10 @@ export class MailFull extends React.Component{
    
     }
    
+    makeNote=(id)=>{
+        notesService.createNoteFromMail(id);
+    }   
+
     render(){
         const {id,fromName,fromEmail,subject,body} = this.props.mail;
         // const classStr = this.state.isShown?'mail-full':'mail-full hidden'
@@ -27,7 +32,8 @@ export class MailFull extends React.Component{
                 <section className="full-title">
                     <div className="full-subject">{subject}</div>
                     <div  className="full-btns flex">
-                        <Link to={`/mail/compose/${id}`} className="full-replay btn"><i class="fas fa-reply"></i></Link>
+                        <Link to={`/mail/compose/${id}`} className="full-reply btn"><i class="fas fa-reply"></i></Link>
+                        <div className="full-savetonote btn" onClick={()=>this.makeNote(id)}><i className="fas fa-sticky-note"></i></div>
                         <div className="full-delete btn" onClick={()=>this.props.moveToTrash(id)}><i className="fas fa-trash"></i></div>
                         <div className="full-expand btn" onClick={()=>this.toggleLoadMore()}><i className="fas fa-expand"></i></div>
                         <div className="full-close btn" onClick={()=>this.props.closeFullPreview()}><i className="far fa-window-close"></i></div>

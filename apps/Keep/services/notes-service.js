@@ -114,6 +114,9 @@ function getAllNotes() {
 }
 
 function getNoteById(noteId) {
+    console.log(gNotes);
+    const note = gNotes.find(note => note.id === noteId)
+    console.log(note);
     return gNotes.find(note => note.id === noteId);
 }
 

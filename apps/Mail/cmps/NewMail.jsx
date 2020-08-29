@@ -37,15 +37,31 @@ export class NewMail extends React.Component {
     onReply (id){
         var mail = MailService.getMailById(id);
         if (mail){
-
             mail.body = '\n\n'+mail.body;
             mail.subject= 'Re:'+mail.subject;
             this.setState({mail: {...this.state.mail,body:mail.body,subject:mail.subject}})
             return
         }
         var note = notesService.getNoteById(id);
+        console.log(note);
         if (note){
-            this.setState({mail: {...this.state.mail,body:note.info,subject:note.title}})
+            let bodyStr='Hey! I would like to share my note with you: \n \n';
+
+            switch (note.type) {
+                case 'NoteImg':
+                case 'NoteVideo':
+                    bodyStr+=note.info.url
+                    break;
+                case 'NoteText':
+                    bodyStr+=note.info.txt
+                    break;
+                case 'NoteTodos':
+                    bodyStr+=note.info.todos.reduce(((acc,todo)=>acc+='\t'+todo.txt+((todo.doneAt)?' (done)':'')+'\n'),'');
+                    console.log(bodyStr);
+                    break;
+
+            }
+            this.setState({mail: {...this.state.mail,body:bodyStr,subject:note.title}})
             return
         }
     }
