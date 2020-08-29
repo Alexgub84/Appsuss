@@ -18,6 +18,7 @@ export class MailsList extends React.Component{
     componentDidUpdate(prevProps) {
         if (prevProps.mails === this.props.mails) return
         this.loadMails()
+        console.log(this.state.mails);
     }
 
     handleMailPreviewClicked =(id)=>{
@@ -36,8 +37,17 @@ export class MailsList extends React.Component{
         console.log(ev);
     }
     onMoveToTrash=(id)=>{
-        MailService.toggleTrashById(id);
+        if (MailService.getMailById(id).isTrash){
+            // todo  - add confirm window
+            MailService.deleteMail(id);
+
+        }else{
+            MailService.toggleTrashById(id);
+        }
+        console.log('Moving to trash');
+        this.props.loadMails();
         this.closeFullPreview();
+        
     }
     render(){
         const mails = this.state.mails;

@@ -15,9 +15,9 @@
 
 }
 .menu>*:not(:first-child):hover{
-background-color: #d6e0f0;
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
+    background-color: #d6e0f0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .menu>*:not(:first-child).active{
     background-color: #eb8f8f;
@@ -73,5 +73,63 @@ border-bottom-right-radius: 10px;
 
 /* NEW MAIL */
 .new-mail-container{
-    padding: 0 10px;
+    width: 70%;
+    padding: 0;
+    background-color: #fff;
+    margin-left: 10px;
 }
+.new-mail-container li{
+    margin-bottom: 10px;
+}
+.new-mail-container span{
+    color: gray;
+    margin-right: 5px;
+    padding-left: 5px;
+}
+.new-mail-container input{
+    border: none;
+    
+}
+.new-mail-container textarea{
+    border: none;
+    height: 150px;
+  
+    margin: 2px;
+    background-color: white;
+}
+
+.new-mail-line{
+    border-bottom: 1px solid lightgray;
+}
+
+
+.new-mail-title{
+    background-color: #393B44;
+    color: white;
+
+    padding: 5px 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.new-mail-btns{
+    display: flex;
+    justify-content: space-between;
+}
+.new-mail-btns .btn{
+    padding: 5px
+}
+.new-mail-btns .send{
+   background-color: #0074e4;
+   border-radius: 3px;
+   color: white;
+   margin-left: 10px;
+}
+.new-mail-btns .send:hover{
+    background-color: #2a8de9;
+    box-shadow: 0px 0px 2px 1px #2a8de9;
+}
+.new-mail-btns .delete{
+    margin-right: 10px
+ }
+

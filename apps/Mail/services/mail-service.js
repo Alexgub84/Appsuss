@@ -38,6 +38,7 @@ export const MailService = {
     toggleReadById,
     toggleTrashById,
     addNewMail,
+    deleteMail,
     getMailById
 }
 
@@ -69,3 +70,9 @@ function addNewMail(mail) {
     saveToStorage(KEY, mails)
 }
 
+function deleteMail(id){
+    const idx = mails.findIndex((mail) => mail.id === id);
+    mails.splice(idx,1);
+    saveToStorage(KEY, mails)
+
+}

@@ -29,7 +29,7 @@ export class NewMail extends React.Component {
     render() {
         return (
             <ul className="new-mail-container">
-                <li className="new-mail-title">New Message</li>
+                <li className="new-mail-title">  New Message</li>
                 <li className="new-mail-line">
                     <span>To:</span>
                     <input type="text" name="to" onChange={this.inputChange} />
@@ -47,9 +47,9 @@ export class NewMail extends React.Component {
                     <input type="text" name="subject" onChange={this.inputChange} />
                 </li>
                 <li><textarea name="body" onChange={this.inputChange}></textarea></li>
-                <li className="new-mail-btns btn">
-                    <div onClick={this.sendMail}>Send</div>
-                    <div className="btn">Delete</div>
+                <li className="new-mail-btns ">
+                    <div  className="send btn" onClick={this.sendMail}>Send</div>
+                    <div className="delete btn"><i className="fas fa-trash"></i></div>
                 </li>
             </ul>
 

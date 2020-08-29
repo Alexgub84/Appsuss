@@ -63,16 +63,16 @@ export class MailApp extends React.Component {
             this.setState({fullShownId:id,isFullShown:true})
         }else  this.setState({fullShownId:id})
     }
-    closeFullPreview=()=>{
-        this.setState({isFullShown:false})
-    }
-    onToggleCheckbox=(ev)=>{
-        console.log(ev);
-    }
-    onMoveToTrash=(id)=>{
-        MailService.toggleTrashById(id);
-        this.closeFullPreview();
-    }
+    // closeFullPreview=()=>{
+    //     this.setState({isFullShown:false})
+    // }
+    // onToggleCheckbox=(ev)=>{
+    //     console.log(ev);
+    // }
+    // onMoveToTrash=(id)=>{
+    //     MailService.toggleTrashById(id);
+    //     this.closeFullPreview();
+    // }
     getMailsToDisplay(){
         const {filterBy} = this.state
         if (!this.state.mails) return
@@ -91,7 +91,7 @@ export class MailApp extends React.Component {
                     <Menu filterByTrash={this.setFilterTrash} filterByInbox={this.setFilterInbox} filterBySent={this.setFilterSent} composeNew={this.toggleNewMail}/>
                     {console.log(mails)}
                     {this.state.isNewMail && <NewMail onSend={this.sendNewMail}/>||
-                        mails && <MailsList mails={mails} onToggleReadUnread={this.toggleReadUnRead}/>
+                        mails && <MailsList mails={mails} onToggleReadUnread={this.toggleReadUnRead} loadMails={this.loadMails}/>
                     }
                 </div>
             
