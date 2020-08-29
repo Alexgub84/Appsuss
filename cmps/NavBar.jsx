@@ -62,4 +62,4 @@ class _NavBar extends React.Component {
         )
     }
 }
-export const NavBar = withRouter(_NavBar)
+export const NavBar = withRouter(_NavBar);

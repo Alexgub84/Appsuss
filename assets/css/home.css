@@ -1,0 +1,22 @@
+.home-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.home-container .nav-link {
+    width: 35vw;
+    padding: 40px;
+}
+
+@media(min-width: 666px) {
+    .home-container .nav-link:hover {
+        background-color: #145274b9;
+    }
+}
+
+@media(max-width: 666px) {
+    .home-container .nav-link {
+        width: 35vw;
+        padding: 0;
+    }
+}

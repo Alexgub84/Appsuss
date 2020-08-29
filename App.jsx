@@ -6,13 +6,13 @@ import { Home } from './pages/Home.jsx'
 import { Mail } from './pages/Mail.jsx'
 import { Keep } from './pages/Keep.jsx'
 import { About } from './pages/About.jsx'
+import {Footer} from './cmps/Footer.jsx'
 
 export class App extends React.Component {
     
     render() {
         return (
             <Router>
-                <div>
                     <NavBar />
                     <main>
                         <Switch>
@@ -22,8 +22,7 @@ export class App extends React.Component {
                             <Route component={Home} path="/" />
                         </Switch>
                     </main>
-                    {/* <Notification/> */}
-                </div>
+                    <Footer />
             </Router>
         )
     }
