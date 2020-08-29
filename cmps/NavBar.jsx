@@ -28,7 +28,7 @@ class _NavBar extends React.Component {
                                 <div className="nav-link">
                                     {/* <i className="fas fa-home"></i> */}
                                     <div className="img-container">
-                                        <img src="../assets/img/home-icon.png" />
+                                        <img src="./../assets/img/home-icon.png" />
                                     </div>
                                     <h3>Home</h3>
                                 </div>
@@ -37,7 +37,7 @@ class _NavBar extends React.Component {
                                 <div className="nav-link">
                                     {/* <i className="fas fa-info"></i> */}
                                     <div className="img-container">
-                                        <img src="../assets/img/about-us-icon.jpg" />
+                                        <img src="./../assets/img/about-us-icon.jpg" />
                                     </div>
                                     <h3>About</h3>
                                 </div>
@@ -46,7 +46,7 @@ class _NavBar extends React.Component {
                                 <div className="nav-link">
                                     {/* <i className="far fa-envelope"></i> */}
                                     <div className="img-container">
-                                        <img src="../assets/img/mail-icon.png" />
+                                        <img src="./../assets/img/mail-icon.png" />
                                     </div>
                                     <h3>Mail</h3>
                                 </div>
@@ -55,7 +55,7 @@ class _NavBar extends React.Component {
                                 <div className="nav-link">
                                     {/* <i className="far fa-sticky-note"></i> */}
                                     <div className="img-container">
-                                        <img src="../assets/img/note-icon.png" />
+                                        <img src="./../assets/img/note-icon.png" />
                                     </div>
                                     <h3>Keep</h3>
                                 </div>
