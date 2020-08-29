@@ -1,10 +1,7 @@
 import { KeepApp } from "../apps/Keep/KeepApp.jsx";
 
-export class Keep extends React.Component{
-    render (){
-    return (
-        <section>
-           <KeepApp/>
-        </section>
-    )}
+export class Keep extends React.Component {
+    render() {
+        return <KeepApp />;
+    }
 }
