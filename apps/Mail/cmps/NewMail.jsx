@@ -63,7 +63,7 @@ export class NewMail extends React.Component {
                 <li><textarea name="body" value={this.state.mail.body}  onChange={this.inputChange}></textarea></li>
                 <li className="new-mail-btns ">
                     <div  className="send btn" onClick={this.sendMail}>Send</div>
-                    <div className="delete btn" onClick={this.props.closeNewMail}><i className="fas fa-trash"></i></div>
+                    <div className="delete btn" onClick={this.props.toggleNewMail}><i className="fas fa-trash"></i></div>
                 </li>
             </ul>
 
