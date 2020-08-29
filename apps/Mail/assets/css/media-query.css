@@ -1,0 +1,14 @@
+
+@media (max-width: 1080px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 960px) {
+    
+}
+
+@media (max-width: 800px) {
+    
+}

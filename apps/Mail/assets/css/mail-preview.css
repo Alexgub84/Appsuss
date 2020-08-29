@@ -44,7 +44,7 @@
 }
 
 .mail-body{
-    max-width: 50%;
+    width: 50%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

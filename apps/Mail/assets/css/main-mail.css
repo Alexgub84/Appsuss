@@ -1,7 +1,8 @@
-@import '../css/mail-preview.css';
+@import './mail-preview.css';
+@import './media-query.css';
 
 .mail-container{
-    width: 100%;
+    
 }
 
 /* MENU */
@@ -69,7 +70,7 @@
 .full-reply{
     color:black;
 }
-.btn:hover {
+.full-btn:hover {
     cursor: pointer;
     color: #eb8f8f;
 }

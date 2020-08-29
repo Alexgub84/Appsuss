@@ -2,12 +2,12 @@
 export class ConrolPanel extends React.Component{
 
 
-    
     render(){
-       <section>
-           <div>Read/Unread</div>
-           <div>Delete</div>
-       </section>
-    }
-
+        return(
+            <section>
+                <div className="control-read-btn btn">Read/Unread</div>
+                <div className="control-read-btn btn" >Delete</div>
+            </section>
+        )
+        }
 }
