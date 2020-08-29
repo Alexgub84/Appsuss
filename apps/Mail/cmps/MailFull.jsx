@@ -1,10 +1,21 @@
 
 export class MailFull extends React.Component{
     state={
-        isShown: false
+        isShown: false,
+        bodyLenght: 200,
+        showMoreBtn: ' show more'
     }
     toggleShown=()=>{
         this.setState({isShown:!this.state.isShown})
+    }
+    toggleLoadMore=()=>{
+        
+    if (this.state.bodyLenght===200){
+        this.setState({bodyLenght:Infinity,loadMoreBtn:' show less'})
+        return
+    }
+    this.setState({bodyLenght:200,loadMoreBtn:' show more'})
+   
     }
    
     render(){
@@ -16,6 +27,7 @@ export class MailFull extends React.Component{
                     <div className="full-subject">{subject}</div>
                     <div  className="full-btns flex">
                         <div className="full-delete btn" onClick={()=>this.props.moveToTrash(id)}><i className="far fa-window-close"></i></div>
+                        <div className="full-expand btn" ><i className="fas fa-expand"></i></div>
                         <div className="full-close btn" onClick={()=>this.props.closeFullPreview()}><i className="fas fa-trash"></i></div>
                     </div>
                 </section>
@@ -23,7 +35,7 @@ export class MailFull extends React.Component{
                     <span className="full-from-name">{fromName}</span>
                    <span className="full-from-email">{` <${fromEmail}>`}</span>
                 </section>
-                <p className="full-body"> {body.substring(1, 200)+'...'} <span> load more...</span>
+        <p className="full-body"> {body.substring(1, this.state.bodyLenght)+'...'} <span className="full-loadmore-btn btn" onClick={()=>this.toggleLoadMore()}>{this.state.showMoreBtn}</span>
                 </p>
             </li>
         )

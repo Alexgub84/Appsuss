@@ -42,7 +42,8 @@ border-bottom-right-radius: 10px;
     width: 90%;
 }
 .full-container i{
-    width: 30px;
+    font-size: 1.2rem;
+    margin: 10px 10px;
 }
 .full-title{
     display: flex;
@@ -61,6 +62,9 @@ border-bottom-right-radius: 10px;
 .full-body{
     padding: 0 10px;
     max-width: 1040px;
+}
+.full-loadmore-btn{
+    color: gray;
 }
 .btn:hover {
     cursor: pointer;
