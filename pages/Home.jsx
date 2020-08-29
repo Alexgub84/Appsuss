@@ -9,7 +9,7 @@ class _Home extends React.Component {
                     <NavLink exact to="/mail">
                         <div className="nav-link">
                             <div className="img-container">
-                                <img src="/./../assets/img/mail-icon.png" />
+                                <img src="assets/img/mail-icon.png" />
                             </div>
                             <h2>Mail</h2>
                         </div>
@@ -17,7 +17,7 @@ class _Home extends React.Component {
                     <NavLink exact to="/keep">
                         <div className="nav-link">
                             <div className="img-container">
-                                <img src="/./../assets/img/note-icon.png" />
+                                <img src="assets/img/note-icon.png" />
                             </div>
                             <h2>Keep</h2>
                         </div>
