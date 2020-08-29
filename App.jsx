@@ -9,7 +9,7 @@ import { About } from './pages/About.jsx'
 import {Footer} from './cmps/Footer.jsx'
 
 export class App extends React.Component {
-    
+
     render() {
         return (
             <Router>

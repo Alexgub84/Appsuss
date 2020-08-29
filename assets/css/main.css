@@ -17,6 +17,10 @@
     font-family: Heebo-Extrabold;
     src: url('../Fonts/Heebo-ExtraBold.ttf')
 }
+@font-face {
+    font-family: Heebo-bold;
+    src: url('../Fonts/Heebo-Bold.ttf')
+}
 
 @font-face {
     font-family: StalinistOne;
