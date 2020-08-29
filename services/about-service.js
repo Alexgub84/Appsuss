@@ -29,7 +29,7 @@ const gAbouts = [
         description: [
             `My vision is to create  web application to make problems into solutions.`,
             `Expert in self-development coaching, especially in personal and team effectiveness.`,
-            `Maj. (ret.), with 11 years of experience in the operational unit in the Air Force.`,
+            `Maj. (ret.), with 13 years of experience in the operational unit in the Air Force.`,
             `When I'm not coding, you'll find me cooking, running or lifting some weights in my Crossfit box.`,
         ],
         contacts: [

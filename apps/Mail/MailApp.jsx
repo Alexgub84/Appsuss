@@ -11,14 +11,28 @@ export class MailApp extends React.Component {
         mails: null,
         mailsToDisplay:null,
         isNewMail:false,
+        replyId:null,
         filterBy:'inbox',
         isFullShown:false,
         fullShownId:null
     }
 
     componentDidMount(){
+        if (this.props.match){
+            this.setState({replyId:this.props.match.params.id})
+            this.setState({isNewMail:true})
+        }
         this.loadMails();
-       
+    }
+    componentDidUpdate(prevProps){
+        if(!this.props.match) return
+        if (prevProps.match.params.id === this.props.match.params.id) return
+        if (this.props.match.params.id){
+          
+            this.setState({replyId:this.props.match.params.id})
+            this.setState({isNewMail:true})
+        }
+       console.log(this.state.isNewMail);
     }
     
     loadMails=()=>{
@@ -88,7 +102,8 @@ export class MailApp extends React.Component {
            
                 <div className="mail-container flex">
                     <Menu filterByTrash={this.setFilterTrash} filterByInbox={this.setFilterInbox} filterBySent={this.setFilterSent} composeNew={this.toggleNewMail}/>
-                    {this.state.isNewMail && <NewMail onSend={this.sendNewMail} toggleNewMail={this.toggleNewMail}/>||
+                    {this.state.isNewMail && 
+                    <NewMail replyId={this.state.replyId} onSend={this.sendNewMail} toggleNewMail={this.toggleNewMail}/>||
                         mails && <MailsList mails={mails}  onToggleReadUnread={this.toggleReadUnRead} loadMails={this.loadMails}/>
                     }
                 </div>
