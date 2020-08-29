@@ -25,7 +25,7 @@ const gAbouts = [
     {
         name: 'Alex Guberman',
         title: 'Full-Stack Web Developer',
-        img: '../assets/img/alex-guberman.jpg',
+        img: 'assets/img/alex-guberman.jpg',
         description: [
             `My vision is to create  web application to make problems into solutions.`,
             `Expert in self-development coaching, especially in personal and team effectiveness.`,
