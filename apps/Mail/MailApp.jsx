@@ -1,9 +1,9 @@
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM
 
-import {Menu} from './cmps/Menu.jsx'
-import {MailService} from './services/mail-service.js'
-import {MailsList} from './cmps/MailsList.jsx'
+import { Menu } from './cmps/Menu.jsx'
+import { MailService } from './services/mail-service.js'
+import { MailsList } from './cmps/MailsList.jsx'
 import { NewMail } from './cmps/NewMail.jsx'
 
 export class MailApp extends React.Component {
@@ -14,7 +14,6 @@ export class MailApp extends React.Component {
         filterBy:'inbox',
         isFullShown:false,
         fullShownId:null
-        
     }
 
     componentDidMount(){
@@ -29,17 +28,21 @@ export class MailApp extends React.Component {
                 console.log('Loading new mails');
             })         
     }  
+
     sendNewMail=(mail)=>{
         this.toggleNewMail()
         MailService.addNewMail(mail);
         this.loadMails()
     }
+
     setFilterTrash=()=>{
         this.setState({filterBy:'trash'});
     }
+
     setFilterInbox=()=>{
         this.setState({filterBy:'inbox'});
     }
+
     setFilterSent=()=>{
         this.setState({filterBy:'sent'});
 
