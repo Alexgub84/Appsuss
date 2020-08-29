@@ -1,5 +1,4 @@
 const { NavLink, withRouter } = ReactRouterDOM;
-import { Search } from './Search.jsx'
 
 class _NavBar extends React.Component {
     // function goBack(){
