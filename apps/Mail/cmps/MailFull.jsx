@@ -3,7 +3,7 @@ export class MailFull extends React.Component{
     state={
         isShown: false,
         bodyLenght: 200,
-        showMoreBtn: ' show more'
+        loadMoreBtn: ' show more'
     }
     toggleShown=()=>{
         this.setState({isShown:!this.state.isShown})
@@ -35,7 +35,7 @@ export class MailFull extends React.Component{
                     <span className="full-from-name">{fromName}</span>
                    <span className="full-from-email">{` <${fromEmail}>`}</span>
                 </section>
-        <p className="full-body"> {body.substring(1, this.state.bodyLenght)+'...'} <span className="full-loadmore-btn btn" onClick={()=>this.toggleLoadMore()}>{this.state.showMoreBtn}</span>
+        <p className="full-body"> {body.substring(0, this.state.bodyLenght)+'...'} <span className="full-loadmore-btn btn" onClick={()=>this.toggleLoadMore()}>{this.state.loadMoreBtn}</span>
                 </p>
             </li>
         )

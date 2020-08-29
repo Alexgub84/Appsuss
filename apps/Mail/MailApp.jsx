@@ -25,7 +25,6 @@ export class MailApp extends React.Component {
         MailService.query()
             .then(mails=>{
                 this.setState({mails})
-                console.log('Loading new mails');
             })         
     }  
 
@@ -89,8 +88,7 @@ export class MailApp extends React.Component {
            
                 <div className="mail-container flex">
                     <Menu filterByTrash={this.setFilterTrash} filterByInbox={this.setFilterInbox} filterBySent={this.setFilterSent} composeNew={this.toggleNewMail}/>
-                    {console.log(mails)}
-                    {this.state.isNewMail && <NewMail onSend={this.sendNewMail}/>||
+                    {this.state.isNewMail && <NewMail onSend={this.sendNewMail} closeNewMail={this.toggleNewMail}/>||
                         mails && <MailsList mails={mails} onToggleReadUnread={this.toggleReadUnRead} loadMails={this.loadMails}/>
                     }
                 </div>

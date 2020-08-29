@@ -6,6 +6,8 @@ import {Home} from './pages/Home.jsx'
 import {Mail} from './pages/Mail.jsx'
 import {Keep} from './pages/Keep.jsx'
 import {About} from './pages/About.jsx'
+import { NewMail } from './cmps/NewMail.jsx'
+
 
 export class App extends React.Component {
 
@@ -19,6 +21,7 @@ export class App extends React.Component {
                       <Route component = {About} path="/about"/>
                       <Route component = {Keep} path="/keep"/>
                       <Route component = {Mail} path="/mail/"/>
+                      <Route component = { NewMail } path="/mail/compose/:id?"/>
                       <Route component = {Home} path="/"/>
                   </Switch>
                 </main>
