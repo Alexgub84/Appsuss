@@ -67,6 +67,10 @@ textarea {
     color: #ee6f57;
 }
 
+.note-lists h3 {
+    padding: 0 15px;
+}
+
 .note {
     background-color: #d3d3d3;
     border-radius: 15px;
@@ -75,6 +79,7 @@ textarea {
     color: #303030;
     display: inline-block;
     box-shadow: 0px 0px 10px -3px rgba(64, 64, 64, 1);
+    text-align: start;
 }
 
 .note:hover {
@@ -89,15 +94,17 @@ textarea {
     text-align: right;
 }
 
-.btn-toggle-pin, .btn-remove-note, .btn-toggle-pallet {
+.note-btns-container a {
+    color: inherit;
+}
+
+.btn-toggle-pin, .btn-remove-note, .btn-toggle-pallet, .btn-note-to-mail {
     cursor: pointer;
     padding: 5px;
     margin: 1px;
     border-radius: 5px;
     ;
 }
-
-
 
 .title-edit, .text-edit {
     display: flex;
@@ -234,7 +241,7 @@ textarea {
     .note {
         width: 25vw;
     }
-    .btn-toggle-pin:hover, .btn-remove-note:hover, .btn-toggle-pallet:hover {
+    .btn-toggle-pin:hover, .btn-remove-note:hover, .btn-toggle-pallet:hover, .btn-note-to-mail:hover {
         background-color: rgba(0, 0, 0, 0.15);
     }
     .invisible {

@@ -31,6 +31,7 @@ html {
 body {
     box-sizing: border-box;
     background-color: #f6f5f5;
+    margin:0;
 }
 
 ul {
@@ -45,8 +46,14 @@ a {
     text-decoration: none;
 }
 
-input{
+input {
     font-family: inherit;
+}
+
+#root {
+    position: relative;
+    padding-bottom: 90px;
+    min-height: 87vh;
 }
 
 /* HELPERS */
@@ -57,10 +64,4 @@ input{
 
 .hidden {
     display: none;
-}
-
-#root{
-    position: relative;
-    padding-bottom: 90px;
-    min-height:85vh;
 }
