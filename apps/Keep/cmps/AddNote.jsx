@@ -8,7 +8,7 @@ export class AddNote extends React.Component {
             { type: 'NoteText', placeholder: 'What\'s on your mind?', btnTxt: <i className="far fa-file-alt"></i> },
             { type: 'NoteImg', placeholder: 'Enter image\'s URL...', btnTxt: <i className="far fa-image"></i> },
             { type: 'NoteVideo', placeholder: 'Enter video\'s URL...', btnTxt: <i className="fab fa-youtube"></i> },
-            { type: 'NoteTodos', placeholder: 'Enter comma seperated list...', btnTxt: <i className="fas fa-tasks"></i> }
+            { type: 'NoteTodos', placeholder: 'Enter comma (,) seperated list...', btnTxt: <i className="fas fa-tasks"></i> }
         ],
         currNoteType: 0,
         inputValue: ''

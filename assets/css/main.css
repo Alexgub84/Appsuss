@@ -1,6 +1,7 @@
 @import './nav-bar.css';
 @import './notification.css';
 @import './search.css';
+@import './about.css';
 @import '../../apps/Mail/assets/css/main-mail.css';
 @import '../../apps/Keep/assets/css/keep.css';
 /* FONTS */
