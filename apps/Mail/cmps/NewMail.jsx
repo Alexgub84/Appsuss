@@ -1,5 +1,5 @@
 import { MailService } from '../services/mail-service.js'
-
+import {notesService} from '../../Keep/services/notes-service.js'
 
 export class NewMail extends React.Component {
 
@@ -15,13 +15,15 @@ export class NewMail extends React.Component {
             isTrash: false,
             sentAt: new Date(),
         },
-        isReplay:false
+        isReplay:false,
+        replyId:null
     }
     componentDidMount(){
-        if (this.state.isReplay){
-            let newMail = this.onReplay();
-            this.setState({mail: {...this.state.mail,body:newMail.body,subject:newMail.subject}})
+        if (this.props.replyId){
+            this.setState({ replyId:this.props.replyId })
+            this.onReply(this.props.replyId);
         }
+
     }
     sendMail = () => {
         this.props.onSend(this.state.mail);
@@ -32,11 +34,24 @@ export class NewMail extends React.Component {
         this.setState({ mail: { ...this.state.mail, [name]: value } })
     }
 
-    onReplay (id){
-        var mail = MailService.getMailById('ac');
-        mail.body = '\n\n'+mail.body;
-        mail.subject= 'Re:'+mail.subject;
-        return mail
+    onReply (id){
+        var mail = MailService.getMailById(id);
+        if (mail){
+
+            mail.body = '\n\n'+mail.body;
+            mail.subject= 'Re:'+mail.subject;
+            this.setState({mail: {...this.state.mail,body:mail.body,subject:mail.subject}})
+            return
+        }
+        var note = notesService.getNoteById(id);
+        if (note){
+            this.setState({mail: {...this.state.mail,body:note.info,subject:note.title}})
+            return
+        }
+    }
+
+    onSendNote=(id)=>{
+
     }
 
     render() {
