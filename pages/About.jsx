@@ -6,7 +6,6 @@ export class About extends React.Component {
         const abouts = aboutServcie.getAbouts();
         return (
             <React.Fragment>
-                <h2>About</h2>
                 <main className="about-container">
                     {abouts.map((about, idx) => <AboutCard key={idx} about={about} />)}
                 </main>

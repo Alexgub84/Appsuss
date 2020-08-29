@@ -54,7 +54,7 @@ const mockUpNotes = [
         type: `NoteVideo`,
         title: `באים להרים לי`,
         isPinned: true,
-        info: { url: `https://www.youtube.com/embed/tnFrdk3GPu0` },
+        info: { url: `https://www.youtube.com/embed/I9xBb3MDxgk` },
         style: { backgroundColor: `#f28b82` }
     },
     {
@@ -69,13 +69,15 @@ const mockUpNotes = [
         id: `tNuOv`,
         type: `NoteTodos`,
         title: `Title...`,
-        isPinned: false,
+        isPinned: true,
         info: {
             todos: [
-                { txt: `Home`, doneAt: null },
+                { txt: `Home`, doneAt: 1598537520698 },
                 { txt: `Mail`, doneAt: 1598537519700 },
                 { txt: `Keep`, doneAt: 1598537520698 },
-                { txt: `Search`, doneAt: null }
+                { txt: `About`, doneAt: 1598537520698 },
+                { txt: `Responsive Design`, doneAt: 1598537520698 },
+                { txt: `Search`, doneAt: 1598537520698 }
             ]
         },
         style: { backgroundColor: `#e8eaed` }
@@ -86,7 +88,7 @@ const mockUpNotes = [
         title: `Eek, blast of cold air coming out of that box.`,
         isPinned: false,
         info: { txt: `Title of your sex tap` },
-        style: { backgroundColor: `#aaaaaa` }
+        style: { backgroundColor: `#e8eaed` }
     },
     {
         id: `koPwv`,
@@ -102,8 +104,124 @@ const mockUpNotes = [
         title: `The meaning of life`,
         isPinned: false,
         info: { txt: `The mice said it's 42` },
-        style: { backgroundColor: `#aaaaaa` }
-    }
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n110`,
+        type: `NoteImg`,
+        title: `Amazing Ant`,
+        isPinned: false,
+        info: { url: `https://lh3.googleusercontent.com/proxy/77Hfl50ZfEb3_-pP7rAYR4J2w5wCdElM1NxMaqHEbaLTe8frR28JMq7fzL8Es0ifCNielozU5bsvZ7FDQuJ2iPPpBS4X0TjR8IzsmRzz8Zgcxk2dXGAIstWV2A85R7Ve9ljCwfEcRPZWwcNrTKR294_iB4EFNaXO7yVT5jsD-jo5_kCVdIRQEtmf9NeWFzk` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n111`,
+        type: `NoteImg`,
+        title: `Stereogram`,
+        isPinned: false,
+        info: { url: `https://i.imgur.com/Li3WYz4.jpg` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n112`,
+        type: `NoteImg`,
+        title: `אשתי ואני ופריז`,
+        isPinned: true,
+        info: { url: `https://scontent.fhfa2-2.fna.fbcdn.net/v/t1.0-9/74675014_10157774063237299_5826641384957804544_o.jpg?_nc_cat=104&_nc_sid=8bfeb9&_nc_ohc=_-K6f6NnvhQAX-3M09w&_nc_ht=scontent.fhfa2-2.fna&oh=d318f9930798104c909e821f8e7daf0c&oe=5F6FB2AD` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n120`,
+        type: `NoteText`,
+        title: `Inspirational quote:`,
+        isPinned: false,
+        info: { txt: `"Thinking: the talking of the soul with itself" - Plato.` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n121`,
+        type: `NoteText`,
+        title: `"The Old Pond" by Matsuo Bashō`,
+        isPinned: true,
+        info: { txt: `An old silent pond \n A frog jumps into the pond— \n Splash! Silence again.` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n122`,
+        type: `NoteText`,
+        title: `Algorithm / Muse`,
+        isPinned: false,
+        info: {
+            txt: `[Verse 1]\n
+        Burn like a slave\n
+        Churn like a cog\n
+        We are caged in simulations\n
+        Algorithms evolve\n
+        Push us aside and render us obsolete\n
+        \n
+        [Chorus]\n
+        This means war\n
+        With your creator\n
+        This means war\n
+        With your creator\n
+        \n
+        [Bridge]\n
+        Reload, crash out\n
+        \n
+        [Chorus]\n
+        This means war\n
+        With your creator\n
+        This means war\n
+        With your creator` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n4012`,
+        type: `NoteImg`,
+        title: `Pika Pika!`,
+        isPinned: true,
+        info: { url: `https://thumbs.gfycat.com/BlackOffbeatBufeo-size_restricted.gif` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n222`,
+        type: `NoteVideo`,
+        title: `Linkin Park - Crawling (live feat. Chris Cornell)`,
+        isPinned: false,
+        info: { url: `https://www.youtube.com/embed/sAOLJVsk9mA` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n333`,
+        type: `NoteVideo`,
+        title: `React Crash Course`,
+        isPinned: false,
+        info: { url: `https://www.youtube.com/embed/sBws8MSXN7A` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n444`,
+        type: `NoteVideo`,
+        title: `Margaret Gould Stewart: How giant websites design for you (and a billion others, too)`,
+        isPinned: true,
+        info: { url: `https://www.youtube.com/embed/quJdL9ggETI` },
+        style: { backgroundColor: `#e8eaed` }
+    },
+    {
+        id: `n9999`,
+        type: `NoteTodos`,
+        title: `Today's to-do list`,
+        isPinned: true,
+        info: {
+            todos: [
+                { txt: `Make a   to-do list`, doneAt: null },
+                { txt: `Check off the first item`, doneAt: null },
+                { txt: `Realize you already did 2 things on the llist`, doneAt: null },
+                { txt: `Reward yourself with a nice, long nap`, doneAt: 1598537520698 }
+            ]
+        },
+        style: { backgroundColor: `#e8eaed` }
+    },
 ];
 
 let gNotes;
