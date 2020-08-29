@@ -18,12 +18,12 @@ export class Search extends React.Component {
     render() {
         const { currPage } = this.state;
         return (
-            <div className='search-container'>
+            <section className='search-container'>
                 <input type="text" placeholder="Search..." onChange={(ev) => {
                     (currPage === 'keep') ? this.onFilterNotes(ev) : this.onFilterMails(ev)
                 }} />
                 <i className="fas fa-search"></i>
-            </div>
+            </section>
         );
     }
 }

@@ -1,3 +1,4 @@
+@import 'keep-mobile.css';
 *:focus {
     outline: 0;
 }
@@ -27,8 +28,7 @@ textarea {
 
 .add-note {
     background-color: #fff;
-    width: 70vw;
-    height: 5vh;
+    min-height: 5vh;
     border: 1px solid #d3d3d3;
     display: flex;
     justify-content: space-between;
@@ -37,25 +37,15 @@ textarea {
     box-shadow: 0px 4px 8px -1px #000000;
     padding: 10px;
     border-radius: 12px;
-    margin: 20px auto;
-}
-
-.add-note input {
-    border: none;
-    height: 80%;
-    width: 60%;
-    font-size: 1.2rem;
-    margin: auto 0;
-    padding: 3px;
-}
-
-.add-note input:focus {
-    border-bottom: 3px solid #ee6f57;
 }
 
 .add-note-btn-container {
     display: flex;
     align-items: center;
+}
+
+.add-note input:focus {
+    border-bottom: 3px solid #ee6f57;
 }
 
 .btn-select-note-type, .btn-add-note {
@@ -66,6 +56,7 @@ textarea {
     cursor: pointer;
     border-radius: 5px;
     height: 80%;
+    width: 30px;
 }
 
 .btn-add-note {
@@ -76,26 +67,12 @@ textarea {
     color: #ee6f57;
 }
 
-.btn-select-note-type {
-    width: 30px;
-}
-
-.btn-select-note-type:hover {
-    background-color: rgba(238, 111, 87, 0.5)
-}
-
-.note-list {
-    column-count: 3;
-    column-gap: 1em;
-}
-
 .note {
     background-color: #d3d3d3;
     border-radius: 15px;
     padding: 10px;
     margin: 10px;
     color: #303030;
-    width: 25vw;
     display: inline-block;
     box-shadow: 0px 0px 10px -3px rgba(64, 64, 64, 1);
 }
@@ -112,10 +89,6 @@ textarea {
     text-align: right;
 }
 
-.invisible {
-    visibility: hidden;
-}
-
 .btn-toggle-pin, .btn-remove-note, .btn-toggle-pallet {
     cursor: pointer;
     padding: 5px;
@@ -124,9 +97,7 @@ textarea {
     ;
 }
 
-.btn-toggle-pin:hover, .btn-remove-note:hover, .btn-toggle-pallet:hover {
-    background-color: rgba(0, 0, 0, 0.15);
-}
+
 
 .title-edit, .text-edit {
     display: flex;
@@ -152,10 +123,6 @@ textarea {
     justify-content: center;
 }
 
-.btn-update-title:hover, .btn-update-text:hover, .btn-add-todo:hover {
-    background-color: rgba(0, 0, 0, 0.15);
-}
-
 .img-container {
     width: 80%;
     margin: 0 auto;
@@ -177,20 +144,13 @@ textarea {
     align-items: center;
 }
 
-.todo p{
+.todo p {
     margin: 2px;
 }
 
 .todo-done {
     text-decoration: line-through;
     color: rgb(129, 129, 129);
-}
-
-.btn-remove-todo {
-    display: inline-block;
-    justify-self: flex-end;
-    transition: opacity 0.3s;
-    cursor: pointer;
 }
 
 .todo-add-container {
@@ -214,6 +174,10 @@ textarea {
     cursor: pointer;
 }
 
+.add-todo span {
+    padding-inline-start: 4px;
+}
+
 .btn-add-todo {
     height: 5vh;
 }
@@ -222,8 +186,11 @@ textarea {
     color: #ee6f57;
 }
 
-.add-todo span {
-    padding-inline-start: 4px;
+.btn-remove-todo {
+    display: inline-block;
+    justify-self: flex-end;
+    transition: opacity 0.3s;
+    cursor: pointer;
 }
 
 .pallet {
@@ -242,4 +209,38 @@ textarea {
     display: inline-block;
     width: 20px;
     margin: 2px;
+}
+
+@media (min-width:666px) {
+    .add-note {
+        margin: 20px auto;
+        width: 70vw;
+    }
+    .add-note input {
+        border: none;
+        height: 80%;
+        width: 60%;
+        font-size: 1.2rem;
+        margin: auto 0;
+        padding: 3px;
+    }
+    .btn-select-note-type:hover {
+        background-color: rgba(238, 111, 87, 0.5)
+    }
+    .note-list {
+        column-count: 3;
+        column-gap: 1em;
+    }
+    .note {
+        width: 25vw;
+    }
+    .btn-toggle-pin:hover, .btn-remove-note:hover, .btn-toggle-pallet:hover {
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+    .invisible {
+        visibility: hidden;
+    }
+    .btn-update-title:hover, .btn-update-text:hover, .btn-add-todo:hover {
+        background-color: rgba(0, 0, 0, 0.15);
+    }
 }

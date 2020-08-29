@@ -1,5 +1,4 @@
 const { NavLink, withRouter } = ReactRouterDOM;
-import { Search } from './Search.jsx'
 
 class _NavBar extends React.Component {
     // function goBack(){
@@ -26,36 +25,32 @@ class _NavBar extends React.Component {
                         {!isMenuHidden && <React.Fragment>
                             <NavLink exact activeClassName='active-nav' onClick={this.toggleMenu} to='/'>
                                 <div className="nav-link">
-                                    {/* <i className="fas fa-home"></i> */}
                                     <div className="img-container">
-                                        <img src="./../assets/img/home-icon.png" />
+                                        <img src="/./../assets/img/home-icon.png" />
                                     </div>
                                     <h3>Home</h3>
                                 </div>
                             </NavLink>
                             <NavLink exact onClick={this.toggleMenu} to="/about">
                                 <div className="nav-link">
-                                    {/* <i className="fas fa-info"></i> */}
                                     <div className="img-container">
-                                        <img src="./../assets/img/about-us-icon.jpg" />
+                                        <img src="/./../assets/img/about-us-icon.jpg" />
                                     </div>
                                     <h3>About</h3>
                                 </div>
                             </NavLink>
                             <NavLink exact onClick={this.toggleMenu} to="/mail">
                                 <div className="nav-link">
-                                    {/* <i className="far fa-envelope"></i> */}
                                     <div className="img-container">
-                                        <img src="./../assets/img/mail-icon.png" />
+                                        <img src="/./../assets/img/mail-icon.png" />
                                     </div>
                                     <h3>Mail</h3>
                                 </div>
                             </NavLink>
                             <NavLink exact onClick={this.toggleMenu} to="/keep">
                                 <div className="nav-link">
-                                    {/* <i className="far fa-sticky-note"></i> */}
                                     <div className="img-container">
-                                        <img src="./../assets/img/note-icon.png" />
+                                        <img src="/./../assets/img/note-icon.png" />
                                     </div>
                                     <h3>Keep</h3>
                                 </div>
@@ -67,4 +62,4 @@ class _NavBar extends React.Component {
         )
     }
 }
-export const NavBar = withRouter(_NavBar)
+export const NavBar = withRouter(_NavBar);

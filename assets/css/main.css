@@ -1,6 +1,9 @@
 @import './nav-bar.css';
 @import './notification.css';
 @import './search.css';
+@import './about.css';
+@import './home.css';
+@import './footer.css';
 @import '../../apps/Mail/assets/css/main-mail.css';
 @import '../../apps/Keep/assets/css/keep.css';
 /* FONTS */
@@ -58,4 +61,10 @@ input{
 
 .hidden {
     display: none;
+}
+
+#root{
+    position: relative;
+    padding-bottom: 90px;
+    min-height:85vh;
 }

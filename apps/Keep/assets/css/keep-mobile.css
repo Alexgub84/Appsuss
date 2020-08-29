@@ -1,0 +1,25 @@
+@media(max-width: 666px) {
+    .add-note {
+        width: 90vw;
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .add-note input {
+        width: 80%;
+        border: none;
+        margin: 10px 0;
+    }
+    .add-note-btn-container{
+        width: 80%;
+        display:flex;
+        justify-content: space-between;
+    }
+    .note-list {
+        column-count: 1;
+        column-gap: 1em;
+    }
+    .note{
+        width: 85vw;
+    }
+}

@@ -31,11 +31,11 @@ export class KeepApp extends React.Component {
         const pinnedNotes = notes.filter(note => note.isPinned === true);
         const unpinnedNotes = notes.filter(note => note.isPinned === false);
         return (
-            <main>
+            <React.Fragment>
                 <AddNote loadNotes={this.loadNotes} />
                 <Search  currPage="keep" setSearchStr={this.setSearchStr} setFilteredNotes={this.setFilteredNotes} />
                 {!filteredNotes && (
-                    <div>
+                    <section className="note-lists">
                         {pinnedNotes && <div className='pinned-notes'>
                             <h3><i className="fas fa-lock"></i> PINNED</h3>
                             <NoteList notes={pinnedNotes} loadNotes={this.loadNotes} />
@@ -44,13 +44,13 @@ export class KeepApp extends React.Component {
                             <h3><i className="fas fa-lock-open"></i> UNPINNED</h3>
                             <NoteList notes={unpinnedNotes} loadNotes={this.loadNotes} />
                         </div>}
-                    </div>)}
+                    </section>)}
                 {filteredNotes && (
-                    <div>
+                    <section className="search-results">
                         <h3>SEARCH RESULTS</h3>
                         <NoteList notes={filteredNotes} loadNotes={this.loadNotes} />
-                    </div>)}
-            </main>
+                    </section>)}
+            </React.Fragment>
         );
     }
 }
