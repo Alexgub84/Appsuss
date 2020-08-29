@@ -4,7 +4,6 @@ class _Home extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h2>Home</h2>
                 <section className="home-container">
                     <NavLink exact to="/mail">
                         <div className="nav-link">
