@@ -75,4 +75,15 @@
     .about-card{
         width: 90%;
     }
+    .fa-facebook-square {
+        color: #3b5998;
+    }
+    
+    .fa-linkedin {
+        color: #0e76a8;
+    }
+    
+    .fa-envelope-square {
+        color: #B23121;
+    }
 }
